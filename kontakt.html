@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - WelluxAI</title>
+    <meta name="description" content="Kontaktieren Sie uns für maßgeschneiderte KI-Lösungen und Beratung. Unser Expertenteam steht Ihnen bei allen Fragen rund um KI-Integration und Digitalisierung zur Verfügung.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+    <link rel="stylesheet" href="css/header-modern.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/breadcrumbs.css">
+    <link rel="stylesheet" href="css/toast.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header einbinden -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="current">Kontakt</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Hauptinhalt -->
+    <main>
+        <!-- Kontakt-Hero-Sektion -->
+        <section class="hero-section inner-page">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>Kontaktieren Sie uns</h1>
+                    <p class="lead">Wir helfen Ihnen gerne bei Ihren Fragen zur KI-Integration</p>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="images/contact-hero.svg" alt="Kontakt und Support">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Kontaktformular und Infos -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-wrapper" data-aos="fade-up">
+                    <div class="contact-info">
+                        <h2>So erreichen Sie uns</h2>
+                        <p>Unser Expertenteam steht Ihnen bei allen Fragen rund um KI-Integration und Digitalisierung zur Verfügung. Füllen Sie das Formular aus oder nutzen Sie einen unserer anderen Kontaktkanäle.</p>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>E-Mail</h3>
+                                <p><a href="mailto:info@wellux.de">info@wellux.de</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefon</h3>
+                                <p><a href="tel:+4989123456789">+49 (0) 89 123 456 789</a></p>
+                                <p class="contact-hours">Mo-Fr, 9:00-17:00 Uhr</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Adresse</h3>
+                                <p>WelluxAI GmbH<br>
+                                Musterstraße 123<br>
+                                80331 München</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h3>Folgen Sie uns</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>Kontaktformular</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Unternehmen</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-Mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="subject">Betreff *</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="message">Nachricht *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="privacy" name="privacy" required>
+                                    <label for="privacy">Ich stimme der <a href="datenschutz.html">Datenschutzerklärung</a> zu *</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Google Maps Einbindung -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="map-container" data-aos="fade-up">
+                    <h2>Besuchen Sie uns</h2>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.7595457208233!2d11.573734315641916!3d48.13728137922173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e75f6a66cc8a9%3A0xf10764fa29c71c1a!2sMarienplatz%2C%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1620651234567!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ-Sektion -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Häufig gestellte Fragen</h2>
+                    <p>Antworten auf Ihre wichtigsten Fragen</p>
+                </div>
+                
+                <div class="accordion faq-accordion" data-aos="fade-up">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Wie schnell können Sie mit der Implementierung beginnen?</h3>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Nach einem ersten Beratungsgespräch können wir in der Regel innerhalb von 1-2 Wochen mit der Implementierung beginnen. Die genaue Zeitspanne hängt von der Komplexität Ihres Projekts und unserer aktuellen Auslastung ab.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Bieten Sie auch individuelle Beratungstermine an?</h3>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Ja, wir bieten sowohl Remote- als auch Vor-Ort-Beratungstermine an. Sie können über unser <a href="termin.html">Terminbuchungssystem</a> direkt einen Termin vereinbaren oder uns per E-Mail oder Telefon kontaktieren.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h3>Welche Informationen benötigen Sie für ein erstes Angebot?</h3>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Für ein erstes Angebot benötigen wir Informationen zu Ihrem Unternehmen, Ihren aktuellen Herausforderungen, Ihren Zielen mit KI-Technologien und Ihrem ungefähren Budget. Je detaillierter Ihre Angaben sind, desto genauer können wir unser Angebot auf Ihre Bedürfnisse zuschneiden.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action für Terminbuchung -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Lieber direkt einen Termin buchen?</h2>
+                    <p>Vereinbaren Sie ein kostenloses Erstgespräch mit einem unserer KI-Experten.</p>
+                    <a href="termin.html" class="btn btn-light btn-lg">Termin vereinbaren</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer einbinden -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header-modern.js"></script>
+    <script>
+        // Include Header and Footer
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                
+                // Nach dem Laden des Headers das active-Skript ausführen
+                if (typeof setActiveNavLink === 'function') {
+                    setActiveNavLink();
+                }
+            });
+            
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+            
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                const content = item.querySelector('.accordion-content');
+                const icon = item.querySelector('.accordion-icon i');
+                
+                header.addEventListener('click', () => {
+                    // Toggle current item
+                    content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+                    item.classList.toggle('active');
+                    icon.classList.toggle('fa-plus');
+                    icon.classList.toggle('fa-minus');
+                    
+                    // Close other items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                            const otherIcon = otherItem.querySelector('.accordion-icon i');
+                            otherIcon.classList.add('fa-plus');
+                            otherIcon.classList.remove('fa-minus');
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Contact Form Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission (replace with actual AJAX submission in production)
+                    setTimeout(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Show toast notification
+                        if (typeof showToast === 'function') {
+                            showToast('Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in Kürze bei Ihnen melden.', 'success');
+                        }
+                        
+                        // Reset form
+                        contactForm.reset();
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+    
+    <!-- Standardisierte Header- und Footer-Einbindung -->
+    <script src="js/standardize-includes.js"></script>
+</body>
+</html>
