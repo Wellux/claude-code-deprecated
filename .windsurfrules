@@ -1,0 +1,412 @@
+# Windsurf IDE Local Rules - Professional Edition
+
+## 🎯 Projekt-Setup
+
+```yaml
+projekt:
+  name: [NAME]
+  typ: [web-app|api|library|cli-tool]
+  sprache: [typescript|python|go|rust]
+  status: [planning|development|production]
+  version: "2.1"
+```
+
+## 📁 Projekt-Struktur
+
+```
+/[projekt-name]
+├── README.md              # Auto-updated
+├── PROJECT_PLAN.md        # Auto-updated
+├── CHANGELOG.md          # Auto-generated
+├── .windsurf/
+│   └── rules/            # Diese Datei
+├── src/
+│   ├── [feature]/        # Feature-Module
+│   └── __tests__/        # Tests (80% coverage)
+├── .github/
+│   └── workflows/        # CI/CD
+└── scripts/              # Automation
+```
+
+## 🚀 Start-Commands
+
+```bash
+# Neues Projekt initialisieren
+"Erstelle [Projekttyp] Projekt mit Namen [Name]"
+→ Komplette Struktur + README + PROJECT_PLAN + Git init
+
+# Feature hinzufügen (TDD)
+"Implementiere Feature: [Beschreibung]"
+→ Tests first → Branch → Code → Docs → Commit → Push
+
+# Status-Check
+"Zeige Projekt-Status"
+→ Progress-Report aus PROJECT_PLAN.md
+```
+
+## 📝 Dokumentations-Standards
+
+### Bei JEDER Code-Änderung:
+1. **README.md** updaten:
+   - Features-Liste
+   - Installation, Usage, API, Testing
+   - Setup-Anweisungen
+   - Changelog-Referenz
+
+2. **PROJECT_PLAN.md** updaten:
+   - Task-Status
+   - Sprint-Progress (max 300 changes/commit)
+   - Blocker
+   - Issue-Referenz
+
+3. **Git-Workflow** (Conventional Commits):
+   ```bash
+   # Nach 45 Min: Commit Reminder
+   # Nach 60 Min: Push Reminder
+   git add -A
+   git commit -m "type(scope): description
+
+   - Was wurde gemacht
+   - Warum wurde es gemacht
+   - Refs: #[Issue-Number]"
+   
+   git push origin feature/issue-[number]-[description]
+   ```
+
+## 🧪 Test-Strategie (TDD Enforced)
+
+```yaml
+test_requirements:
+  coverage: 80%
+  naming: "should_do_something_when_condition"
+  types:
+    - unit: Alle Business Logic
+    - integration: Kritische Pfade
+    - e2e: User Journeys
+    - a11y: WCAG AA
+    - performance: Core Web Vitals
+  
+vor_jedem_commit:
+  - npm test
+  - npm run lint (ESLint + Stylelint)
+  - npm run type-check
+  - npm run security-audit
+```
+
+### Test-First Pattern
+```typescript
+// IMMER Test zuerst (test_naming_convention)
+describe('UserService', () => {
+  it('should_validate_email_format_when_invalid_input', () => {
+    const schema = z.object({
+      email: z.string().email()
+    });
+    
+    expect(() => schema.parse({ email: 'invalid' }))
+      .toThrow();
+  });
+});
+```
+
+## 🔧 Code-Standards
+
+### JavaScript/TypeScript Excellence
+```typescript
+// tsconfig.json strict mode
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  }
+}
+
+// Max 3 params, max 20 statements
+export async function processUser(
+  data: unknown,
+  options?: ProcessOptions
+): Promise<Result<User>> {
+  // Input validation mit Zod
+  const validated = userSchema.parse(data);
+  
+  try {
+    // Pure functions bevorzugt
+    const processed = transform(validated);
+    return { success: true, data: processed };
+  } catch (error) {
+    // Error handling enforced
+    logger.error('processUser failed:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+// TODO Format: TODO(username): description (2024-12-20)
+```
+
+### CSS Modern Practices
+```css
+/* BEM Methodology + Custom Properties */
+:root {
+  /* Color Variables enforced */
+  --color-primary: #007bff;
+  --spacing-unit: 1rem;
+}
+
+.component {
+  /* Mobile-first, rem units */
+  padding: var(--spacing-unit);
+  
+  /* Max specificity: 0,2,3 */
+  &__element {
+    /* No !important allowed */
+    margin-top: calc(var(--spacing-unit) * 2);
+  }
+}
+```
+
+### HTML5 Standards
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Required Title</title>
+  <link rel="icon" href="/favicon.ico">
+  
+  <!-- SEO Meta Tags enforced -->
+  <meta name="description" content="...">
+  <meta property="og:title" content="...">
+</head>
+<body>
+  <!-- Semantic HTML required -->
+  <header role="banner">
+    <nav aria-label="Hauptnavigation">
+      <!-- Skip Links required -->
+      <a href="#main" class="skip-link">Zum Inhalt</a>
+    </nav>
+  </header>
+  
+  <main id="main">
+    <!-- ARIA roles & alt texts enforced -->
+  </main>
+</body>
+</html>
+```
+
+## 🚦 Build & Performance
+
+```yaml
+optimization:
+  lazy_loading: true
+  code_splitting: true
+  tree_shaking: true
+  critical_css: true
+  
+  performance_budget:
+    js: 150kb
+    css: 50kb
+    total: 500kb
+  
+  web_vitals:
+    LCP: < 2.5s
+    FID: < 100ms
+    CLS: < 0.1
+```
+
+### Performance Pattern
+```typescript
+// Lazy Loading Components
+const HeavyComponent = lazy(() => 
+  import(/* webpackChunkName: "heavy" */ './HeavyComponent')
+);
+
+// Image Optimization
+<picture>
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="Required alt text" loading="lazy">
+</picture>
+```
+
+## 🔐 Security Standards
+
+```yaml
+security:
+  content_security_policy: true
+  https_only: true
+  sanitize_inputs: true
+  npm_audit: true
+  secrets_detection: true
+  
+  headers:
+    - Strict-Transport-Security
+    - X-Content-Type-Options
+    - X-Frame-Options
+    - X-XSS-Protection
+```
+
+### Security Pattern
+```typescript
+// Input Sanitization enforced
+import DOMPurify from 'dompurify';
+
+export function sanitizeUserInput(input: string): string {
+  return DOMPurify.sanitize(input, {
+    ALLOWED_TAGS: ['b', 'i', 'em', 'strong'],
+    ALLOWED_ATTR: []
+  });
+}
+
+// Environment Variables
+const schema = z.object({
+  DATABASE_URL: z.string().url(),
+  API_KEY: z.string().min(32),
+  NODE_ENV: z.enum(['development', 'production'])
+});
+
+export const env = schema.parse(process.env);
+```
+
+## ♿ Accessibility (WCAG AA)
+
+```yaml
+a11y:
+  enforce_aria_roles: true
+  enforce_alt_text: true
+  enforce_keyboard_navigation: true
+  color_contrast_ratio: 4.5:1
+  focus_visible: true
+  screen_reader_compatible: true
+```
+
+## 💬 Cascade-Commands
+
+```yaml
+commands:
+  # Development
+  "scaffold [component]": Mit Tests & Docs
+  "add-endpoint [path]": Mit Validation & OpenAPI
+  "generate-tests": 80% Coverage Target
+  
+  # Quality Checks
+  "lint-all": ESLint + Stylelint + HTMLHint
+  "security-scan": npm audit + secrets check
+  "lighthouse-check": Performance & A11y
+  
+  # Documentation
+  "update-changelog": Aus Git-History
+  "generate-api-docs": OpenAPI/TypeDoc
+  "update-all-docs": README + PROJECT_PLAN + CHANGELOG
+```
+
+## 📊 Git Hooks & CI/CD
+
+```json
+// package.json
+{
+  "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "pre-push": "npm test && npm run build",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "lint": "eslint . --max-warnings 0",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:html": "htmlhint '**/*.html'",
+    "type-check": "tsc --noEmit",
+    "security-audit": "npm audit --audit-level=moderate",
+    "build": "vite build --mode production",
+    "analyze": "vite build --mode production --analyze"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "htmlhint",
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  }
+}
+```
+
+## 🚀 Quick-Start mit Best Practices
+
+```bash
+# 1. Projekt mit allen Standards
+"Erstelle ein Next.js TypeScript Projekt mit:
+- Strict Mode TypeScript Config
+- ESLint Airbnb + Prettier
+- Vitest mit 80% Coverage Target
+- Husky Git Hooks
+- Conventional Commits
+- WCAG AA Accessibility
+- Performance Budget 500kb
+- CSP Headers
+- BEM CSS mit Custom Properties
+- README mit allen required sections"
+
+# 2. Erste Feature (TDD)
+"Implementiere User Authentication:
+1. Schreibe Tests first (80% coverage)
+2. Zod Schemas für Validation
+3. Error Handling Pattern
+4. Pure Functions wo möglich
+5. Max 3 Params pro Function
+6. JSDoc mit Examples
+7. Update README & PROJECT_PLAN"
+
+# 3. Quality Check
+"Führe vollständigen Quality Check durch:
+- ESLint (0 warnings)
+- Stylelint
+- TypeScript strict
+- Tests (80% coverage)
+- Security Audit
+- Lighthouse Score
+- WCAG AA Check"
+```
+
+## 🔄 Daily Workflow
+
+```yaml
+morning:
+  - "Check PROJECT_PLAN.md für heutige Tasks"
+  - "Pull latest changes"
+  - "Run npm audit"
+
+during_development:
+  - Commit nach 45 Min (Reminder)
+  - Push nach 60 Min (Reminder)
+  - Max 300 Zeilen pro Commit
+  - Issue-Referenz in Commit
+
+evening:
+  - "Update PROJECT_PLAN.md Progress"
+  - "Generate Changelog Update"
+  - "Check Test Coverage"
+  - "Final Push"
+```
+
+---
+
+**GOLDEN RULES**:
+1. **TDD**: Test first, code second (80% coverage)
+2. **Docs**: README & PROJECT_PLAN immer aktuell
+3. **Commits**: Conventional, mit Issue-Ref, max 300 Zeilen
+4. **Quality**: 0 Lint Warnings, TypeScript strict
+5. **Security**: Input Validation, CSP, HTTPS only
+6. **Performance**: < 500kb Budget, Core Web Vitals
+7. **A11y**: WCAG AA, Keyboard Nav, Screen Reader
+
+**ENFORCE**: Diese Rules sind nicht optional. Windsurf soll bei Verstößen warnen und Auto-Fix vorschlagen!

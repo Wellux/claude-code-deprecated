@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Readiness Assessment - WelluxAI</title>
+    <meta name="description" content="Bewerten Sie die Bereitschaft Ihres Unternehmens für die Integration von KI-Technologien mit unserem umfassenden KI-Readiness Assessment.">
+    <meta name="keywords" content="KI-Readiness Assessment, KI-Bereitschaft, KI-Reife, Digitale Transformation, KI-Integration">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/breadcrumbs.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/contrast-fixes.css">
+    <link rel="stylesheet" href="css/header-modern.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <link rel="stylesheet" href="css/ui-components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <!-- Include Header (using client-side include for development) -->
+    <div id="header-placeholder"></div>
+    
+    <!-- KI-Readiness Assessment Section -->
+    <section id="assessment" class="assessment-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current">KI-Readiness Assessment</li>
+                </ul>
+            </div>
+            <h2>KI-Readiness <span class="blue">Assessment</span></h2>
+            <p class="section-intro">Bewältigen Sie die Herausforderungen der KI-Integration mit unserem Assessment</p>
+            
+            <div class="assessment-content">
+                <div class="assessment-intro">
+                    <div class="assessment-text">
+                        <h3>Ist Ihr Unternehmen bereit für KI?</h3>
+                        <p>Künstliche Intelligenz bietet enormes Potenzial für Unternehmen jeder Größe. Doch nicht jede Organisation ist gleichermaßen bereit, KI-Technologien erfolgreich zu integrieren. Unser KI-Readiness Assessment hilft Ihnen, den aktuellen Stand Ihres Unternehmens zu bewerten und konkrete nächste Schritte zu identifizieren.</p>
+                        
+                        <h3>Wie funktioniert das Assessment?</h3>
+                        <p>Füllen Sie das nachfolgende Formular aus, um eine personalisierte Einschätzung Ihrer KI-Readiness zu erhalten. Wir bewerten fünf Schlüsselbereiche:</p>
+                        <ul>
+                            <li><strong>Digitale Reife:</strong> Wie fortgeschritten ist Ihre digitale Infrastruktur?</li>
+                            <li><strong>KI-Strategie:</strong> Welche Ziele verfolgen Sie mit KI und wie klar sind diese definiert?</li>
+                            <li><strong>Führung & Mitarbeiter:</strong> Wie stehen Führungskräfte und Team zu KI-Innovationen?</li>
+                            <li><strong>Datenqualität:</strong> Welche Daten stehen zur Verfügung und wie sind diese strukturiert?</li>
+                            <li><strong>IT-Infrastruktur:</strong> Welche technischen Voraussetzungen sind bereits vorhanden?</li>
+                        </ul>
+                        
+                        <p>Nach Abschluss des Assessments erhalten Sie:</p>
+                        <ul>
+                            <li>Einen Gesamtscore zur KI-Readiness Ihres Unternehmens</li>
+                            <li>Detaillierte Bewertungen in den einzelnen Bereichen</li>
+                            <li>Konkrete Handlungsempfehlungen für Ihren KI-Weg</li>
+                            <li>Einen persönlichen Beratungstermin mit unseren KI-Experten</li>
+                        </ul>
+                    </div>
+                    <div class="assessment-image">
+                        <img src="images/assessment-illustration.svg" alt="KI-Readiness Assessment Illustration">
+                    </div>
+                </div>
+                
+                <div class="assessment-form-wrapper">
+                    <h3>Starten Sie Ihr Assessment</h3>
+                    <form class="assessment-form" id="readinessForm">
+                        <!-- Unternehmensinformationen -->
+                        <div class="form-section">
+                            <h4>Unternehmensinformationen</h4>
+                            <div class="form-group">
+                                <label for="company">Unternehmen</label>
+                                <input type="text" id="company" name="company" placeholder="Ihr Unternehmen" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Ansprechpartner</label>
+                                    <input type="text" id="name" name="name" placeholder="Vor- und Nachname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="position">Position</label>
+                                    <input type="text" id="position" name="position" placeholder="Ihre Position">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">E-Mail</label>
+                                    <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefon</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="employees">Mitarbeiteranzahl</label>
+                                    <select id="employees" name="employees" required>
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="1-10">1-10 Mitarbeiter</option>
+                                        <option value="11-50">11-50 Mitarbeiter</option>
+                                        <option value="51-200">51-200 Mitarbeiter</option>
+                                        <option value="201-500">201-500 Mitarbeiter</option>
+                                        <option value="501+">Über 500 Mitarbeiter</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="industry">Branche</label>
+                                    <input type="text" id="industry" name="industry" placeholder="z.B. Handwerk, Handel, Dienstleistung">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Digitale Reife -->
+                        <div class="form-section">
+                            <h4>Digitale Reife</h4>
+                            <div class="form-group">
+                                <label>Wie würden Sie den aktuellen Digitalisierungsgrad Ihres Unternehmens einschätzen?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="digital-maturity" value="1" required> Anfänger - Wir haben gerade erst begonnen, digitale Tools einzusetzen</label>
+                                    <label><input type="radio" name="digital-maturity" value="2"> Fortgeschritten - Wir nutzen verschiedene digitale Tools, aber nicht systematisch</label>
+                                    <label><input type="radio" name="digital-maturity" value="3"> Experte - Wir haben eine umfassende digitale Infrastruktur</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Welche digitalen Tools nutzen Sie bereits? (Mehrfachauswahl möglich)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="digital-tools" value="crm"> CRM-System</label>
+                                    <label><input type="checkbox" name="digital-tools" value="erp"> ERP-System</label>
+                                    <label><input type="checkbox" name="digital-tools" value="analytics"> Datenanalyse-Tools</label>
+                                    <label><input type="checkbox" name="digital-tools" value="cloud"> Cloud-Dienste</label>
+                                    <label><input type="checkbox" name="digital-tools" value="automation"> Automatisierungstools</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- KI-Strategie -->
+                        <div class="form-section">
+                            <h4>KI-Strategie</h4>
+                            <div class="form-group">
+                                <label>Hat Ihr Unternehmen bereits eine KI-Strategie?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="ai-strategy" value="1" required> Nein, wir haben uns noch nicht mit dem Thema beschäftigt</label>
+                                    <label><input type="radio" name="ai-strategy" value="2"> Teilweise, wir haben erste Ideen, aber keine formale Strategie</label>
+                                    <label><input type="radio" name="ai-strategy" value="3"> Ja, wir haben eine definierte KI-Strategie</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Welche Ziele verfolgen Sie mit dem Einsatz von KI? (Mehrfachauswahl möglich)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="ai-goals" value="efficiency"> Effizienzsteigerung</label>
+                                    <label><input type="checkbox" name="ai-goals" value="cost"> Kostenreduktion</label>
+                                    <label><input type="checkbox" name="ai-goals" value="quality"> Qualitätsverbesserung</label>
+                                    <label><input type="checkbox" name="ai-goals" value="innovation"> Neue Produkte/Dienstleistungen</label>
+                                    <label><input type="checkbox" name="ai-goals" value="customer"> Verbesserte Kundenerfahrung</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Führung & Mitarbeiter -->
+                        <div class="form-section">
+                            <h4>Führung & Mitarbeiter</h4>
+                            <div class="form-group">
+                                <label>Wie steht die Unternehmensführung zum Thema KI?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="leadership" value="1" required> Zurückhaltend - KI wird als nicht relevant angesehen</label>
+                                    <label><input type="radio" name="leadership" value="2"> Interessiert - KI wird als Chance gesehen, aber es gibt Bedenken</label>
+                                    <label><input type="radio" name="leadership" value="3"> Enthusiastisch - KI wird als strategische Priorität betrachtet</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Wie schätzen Sie die KI-Kompetenzen Ihrer Mitarbeiter ein?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="skills" value="1" required> Gering - Wenig bis kein Wissen über KI</label>
+                                    <label><input type="radio" name="skills" value="2"> Mittel - Einzelne Mitarbeiter haben Grundkenntnisse</label>
+                                    <label><input type="radio" name="skills" value="3"> Hoch - Wir haben KI-Experten im Team</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Datenqualität -->
+                        <div class="form-section">
+                            <h4>Datenqualität</h4>
+                            <div class="form-group">
+                                <label>Wie gut sind Ihre Unternehmensdaten organisiert?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="data-quality" value="1" required> Unstrukturiert - Daten sind verstreut und nicht zentral verfügbar</label>
+                                    <label><input type="radio" name="data-quality" value="2"> Teilweise strukturiert - Einige Daten sind organisiert, andere nicht</label>
+                                    <label><input type="radio" name="data-quality" value="3"> Gut strukturiert - Wir haben ein zentrales Datenmanagementsystem</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Welche Arten von Daten sammeln Sie bereits? (Mehrfachauswahl möglich)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="data-types" value="customer"> Kundendaten</label>
+                                    <label><input type="checkbox" name="data-types" value="sales"> Verkaufsdaten</label>
+                                    <label><input type="checkbox" name="data-types" value="production"> Produktionsdaten</label>
+                                    <label><input type="checkbox" name="data-types" value="operations"> Betriebsdaten</label>
+                                    <label><input type="checkbox" name="data-types" value="marketing"> Marketingdaten</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- IT-Infrastruktur -->
+                        <div class="form-section">
+                            <h4>IT-Infrastruktur</h4>
+                            <div class="form-group">
+                                <label>Wie bewerten Sie Ihre technische Infrastruktur für KI-Anwendungen?</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="it-infrastructure" value="1" required> Unzureichend - Unsere IT ist nicht für KI ausgelegt</label>
+                                    <label><input type="radio" name="it-infrastructure" value="2"> Teilweise geeignet - Einige Systeme könnten KI unterstützen</label>
+                                    <label><input type="radio" name="it-infrastructure" value="3"> Gut geeignet - Unsere IT-Infrastruktur kann KI-Anwendungen unterstützen</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Haben Sie Bedenken bezüglich der Integration von KI? (Mehrfachauswahl möglich)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="concerns" value="security"> Datensicherheit</label>
+                                    <label><input type="checkbox" name="concerns" value="privacy"> Datenschutz</label>
+                                    <label><input type="checkbox" name="concerns" value="cost"> Kosten</label>
+                                    <label><input type="checkbox" name="concerns" value="complexity"> Komplexität</label>
+                                    <label><input type="checkbox" name="concerns" value="skills"> Mangelnde Fachkenntnisse</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Zusätzliche Informationen -->
+                        <div class="form-section">
+                            <h4>Zusätzliche Informationen</h4>
+                            <div class="form-group">
+                                <label for="goals">Hauptziele</label>
+                                <textarea id="goals" name="goals" rows="3" placeholder="Was möchten Sie mit KI erreichen?"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group privacy-consent">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                Ich stimme der <a href="datenschutz.html">Datenschutzerklärung</a> zu und bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Assessment starten</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works bg-light">
+        <div class="container">
+            <h2>Wie funktioniert der <span class="blue">Prozess?</span></h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>Assessment ausfüllen</h3>
+                    <p>Beantworten Sie die Fragen zu Ihrem Unternehmen und dessen KI-Bereitschaft.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Analyse erhalten</h3>
+                    <p>Unsere Experten analysieren Ihre Antworten und erstellen einen detaillierten Bericht.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Beratungsgespräch</h3>
+                    <p>In einem persönlichen Gespräch erläutern wir die Ergebnisse und nächsten Schritte.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-road"></i>
+                        <span class="step-number">4</span>
+                    </div>
+                    <h3>Roadmap erhalten</h3>
+                    <p>Sie erhalten einen maßgeschneiderten Plan für Ihre erfolgreiche KI-Integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="container">
+            <h2>Erfolgs<span class="blue">geschichten</span></h2>
+            <div class="success-stories-grid">
+                <div class="success-story">
+                    <div class="story-header">
+                        <img src="images/stories/story-1.jpg" alt="Handwerksunternehmen">
+                        <h3>Vom Readiness-Check zur KI-Innovation</h3>
+                    </div>
+                    <div class="story-content">
+                        <p>"Das Assessment hat uns die Augen geöffnet. Wir dachten, wir seien noch weit entfernt von KI-Anwendungen. Mit der gezielten Roadmap konnten wir innerhalb von nur 3 Monaten unsere ersten KI-Projekte starten und sehen bereits deutliche Effizienzsteigerungen."</p>
+                        <div class="story-author">
+                            <p><strong>Michael Schneider</strong><br>Geschäftsführer, Schneider & Söhne GmbH</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-story">
+                    <div class="story-header">
+                        <img src="images/stories/story-2.jpg" alt="E-Commerce Unternehmen">
+                        <h3>Klarer Fokus dank Assessment</h3>
+                    </div>
+                    <div class="story-content">
+                        <p>"Wir hatten bereits einige KI-Ideen, waren aber unsicher, wo wir anfangen sollten. Das Assessment half uns, die wirklich relevanten Bereiche zu identifizieren und unsere Ressourcen gezielt einzusetzen. Heute nutzen wir KI im Kundenservice und haben unsere Reaktionszeiten um 60% verkürzt."</p>
+                        <div class="story-author">
+                            <p><strong>Sarah Müller</strong><br>CTO, DigiShop GmbH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Include Footer (using client-side include for development) -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JavaScript -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Assessment form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const assessmentForm = document.getElementById('readinessForm');
+            if (assessmentForm) {
+                assessmentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading indicator
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(function() {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Show toast notification
+                        showToast('Vielen Dank! Wir analysieren Ihre Angaben und melden uns innerhalb von 24 Stunden mit Ihrer personalisierten KI-Strategie.', 'success');
+                        
+                        // Reset form
+                        assessmentForm.reset();
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+    
+    <!-- Standardisierte Header- und Footer-Einbindung -->
+    <script src="js/standardize-includes.js"></script>
+</body>
+</html>

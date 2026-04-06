@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Demos und interaktive Anwendungen | WelluxAI</title>
+    <meta name="description" content="Erleben Sie unsere KI-Lösungen in Aktion: Interaktive Demos, Video-Showcases und praxisnahe Beispiele für verschiedene Branchen und Anwendungsfälle.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing-page.css">
+    <link rel="stylesheet" href="css/header-modern.css">
+    <link rel="stylesheet" href="css/contrast-fixes.css">
+    <link rel="stylesheet" href="css/performance-optimizations.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/breadcrumbs.css">
+    <link rel="stylesheet" href="css/footer-modern.css">
+    <link rel="stylesheet" href="css/loader.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header einbinden -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="current">KI-Demo</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Hauptinhalt -->
+    <main>
+        <!-- Hero-Sektion -->
+        <section class="hero-section inner-page">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>KI-Demos und interaktive Anwendungen</h1>
+                    <p class="lead">Erleben Sie die Leistungsfähigkeit unserer KI-Lösungen in Aktion</p>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="images/demo-hero.svg" alt="KI-Demo und interaktive Anwendungen">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Live-Demo-Bereich -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Interaktive KI-Demos</h2>
+                    <p>Testen Sie unsere KI-Lösungen direkt in Ihrem Browser</p>
+                </div>
+                
+                <div class="demo-area" data-aos="fade-up">
+                    <div class="demo-filters">
+                        <button class="demo-filter active" data-filter="all">Alle Demos</button>
+                        <button class="demo-filter" data-filter="chat">KI-Assistenten</button>
+                        <button class="demo-filter" data-filter="document">Dokumentenanalyse</button>
+                        <button class="demo-filter" data-filter="process">Prozessautomatisierung</button>
+                    </div>
+                    
+                    <div class="demo-grid">
+                        <!-- KI-Assistent Demo -->
+                        <div class="demo-card" data-category="chat">
+                            <div class="demo-card-header">
+                                <div class="demo-badge">Beliebt</div>
+                                <h3>Branchenspezifischer KI-Assistent</h3>
+                            </div>
+                            <div class="demo-card-content">
+                                <p>Erleben Sie unseren KI-Assistenten, der auf Ihre Branche spezialisiert ist. Stellen Sie Fragen zu Ihrem Geschäftsbereich und erhalten Sie präzise, maßgeschneiderte Antworten.</p>
+                                <div class="demo-preview">
+                                    <img data-src="images/chat-preview.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3C/svg%3E" alt="KI-Assistent Demo Preview" class="lazy-image" width="600" height="400">
+                                    <div class="demo-overlay">
+                                        <button class="btn btn-primary demo-start" data-demo-id="chat-assistant">Demo starten</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dokumentenanalyse Demo -->
+                        <div class="demo-card" data-category="document">
+                            <div class="demo-card-header">
+                                <h3>Intelligente Dokumentenanalyse</h3>
+                            </div>
+                            <div class="demo-card-content">
+                                <p>Laden Sie einen Geschäftsbericht, eine Rechnung oder einen Vertrag hoch und sehen Sie, wie unsere KI relevante Informationen extrahiert, kategorisiert und in strukturierte Daten umwandelt.</p>
+                                <div class="demo-preview">
+                                    <img data-src="images/document-preview.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3C/svg%3E" alt="Dokumentenanalyse Demo Preview" class="lazy-image" width="600" height="400">
+                                    <div class="demo-overlay">
+                                        <button class="btn btn-primary demo-start" data-demo-id="document-analysis">Demo starten</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Prozessautomatisierung Demo -->
+                        <div class="demo-card" data-category="process">
+                            <div class="demo-card-header">
+                                <h3>Automatisierte Workflows</h3>
+                            </div>
+                            <div class="demo-card-content">
+                                <p>Erleben Sie, wie KI-gestützte Automatisierung komplexe Geschäftsprozesse vereinfacht. Konfigurieren Sie einen Workflow und sehen Sie ihn in Echtzeit in Aktion.</p>
+                                <div class="demo-preview">
+                                    <img data-src="images/workflow-preview.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3C/svg%3E" alt="Workflow Automatisierung Preview" class="lazy-image" width="600" height="400">
+                                    <div class="demo-overlay">
+                                        <button class="btn btn-primary demo-start" data-demo-id="workflow-automation">Demo starten</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Datenanalyse Demo -->
+                        <div class="demo-card" data-category="process">
+                            <div class="demo-card-header">
+                                <h3>Geschäftsdaten-Analyse</h3>
+                            </div>
+                            <div class="demo-card-content">
+                                <p>Visualisieren Sie Geschäftsdaten und lassen Sie die KI Trends, Anomalien und Handlungsempfehlungen identifizieren. Erfahren Sie, wie KI Ihre Entscheidungsfindung unterstützen kann.</p>
+                                <div class="demo-preview">
+                                    <img data-src="images/data-analysis-preview.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3C/svg%3E" alt="Datenanalyse Preview" class="lazy-image" width="600" height="400">
+                                    <div class="demo-overlay">
+                                        <button class="btn btn-primary demo-start" data-demo-id="data-analysis">Demo starten</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Video-Demo-Bereich -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Video-Showcases</h2>
+                    <p>Unsere KI-Lösungen im praktischen Einsatz</p>
+                </div>
+                
+                <div class="video-grid" data-aos="fade-up">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img data-src="images/video-preview-1.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 350'%3E%3C/svg%3E" alt="Handwerker-Terminplanung Demo" class="lazy-image" width="600" height="350">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>KI-gestützte Terminplanung für Handwerker</h3>
+                            <p>Sehen Sie, wie unsere KI die Terminplanung eines Sanitärbetriebs optimiert und 25% Fahrtzeit einspart.</p>
+                            <span class="video-duration">4:32 Min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img data-src="images/video-preview-2.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 350'%3E%3C/svg%3E" alt="KMU Dokumentenverarbeitung" class="lazy-image" width="600" height="350">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Automatisierte Rechnungsverarbeitung für KMU</h3>
+                            <p>Ein mittelständisches Unternehmen reduziert seinen administrativen Aufwand um 70% mit unserer KI-Lösung.</p>
+                            <span class="video-duration">5:47 Min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img data-src="images/video-preview-3.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 350'%3E%3C/svg%3E" alt="Enterprise Data Platform" class="lazy-image" width="600" height="350">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Enterprise Data Platform in Aktion</h3>
+                            <p>Einblick in die Implementierung unserer Data Platform bei einem Industrieunternehmen mit 5000+ Mitarbeitern.</p>
+                            <span class="video-duration">8:15 Min</span>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img data-src="images/video-preview-4.jpg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 350'%3E%3C/svg%3E" alt="Startup Growth Hacking" class="lazy-image" width="600" height="350">
+                            <div class="video-play">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>KI-gestütztes Growth Hacking für Startups</h3>
+                            <p>Wie ein SaaS-Startup seine Konversionsrate mit unserer KI-Lösung um 230% steigern konnte.</p>
+                            <span class="video-duration">6:24 Min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Demo-Modal -->
+        <div id="demo-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div class="modal-header">
+                    <h2 id="demo-modal-title">Demo-Titel</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="demo-container">
+                        <!-- Hier wird der Demo-Inhalt dynamisch eingefügt -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Branchenspezifische Demos -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Branchenspezifische Anwendungsfälle</h2>
+                    <p>Entdecken Sie KI-Lösungen für Ihre Branche</p>
+                </div>
+                
+                <div class="industry-demos" data-aos="fade-up">
+                    <div class="industry-demo-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h3>Handwerk</h3>
+                        <ul class="industry-demo-list">
+                            <li><a href="#" data-demo-id="handwerk-angebot">Automatische Angebotserstellung</a></li>
+                            <li><a href="#" data-demo-id="handwerk-termin">Intelligente Terminplanung</a></li>
+                            <li><a href="#" data-demo-id="handwerk-dokumentation">Sprachgesteuerte Dokumentation</a></li>
+                        </ul>
+                        <a href="handwerk.html" class="btn btn-outline">Mehr zu Handwerkslösungen</a>
+                    </div>
+                    
+                    <div class="industry-demo-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3>KMU</h3>
+                        <ul class="industry-demo-list">
+                            <li><a href="#" data-demo-id="kmu-kundensupport">KI-gestützter Kundenservice</a></li>
+                            <li><a href="#" data-demo-id="kmu-prozess">Prozessautomatisierung</a></li>
+                            <li><a href="#" data-demo-id="kmu-analyse">Geschäftsdatenanalyse</a></li>
+                        </ul>
+                        <a href="kmu.html" class="btn btn-outline">Mehr zu KMU-Lösungen</a>
+                    </div>
+                    
+                    <div class="industry-demo-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Enterprise</h3>
+                        <ul class="industry-demo-list">
+                            <li><a href="#" data-demo-id="enterprise-data">Enterprise Data Platform</a></li>
+                            <li><a href="#" data-demo-id="enterprise-compliance">Compliance-Monitoring</a></li>
+                            <li><a href="#" data-demo-id="enterprise-process">End-to-End Prozessautomatisierung</a></li>
+                        </ul>
+                        <a href="enterprise.html" class="btn btn-outline">Mehr zu Enterprise-Lösungen</a>
+                    </div>
+                    
+                    <div class="industry-demo-card">
+                        <div class="industry-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Startups</h3>
+                        <ul class="industry-demo-list">
+                            <li><a href="#" data-demo-id="startup-growth">Growth Accelerator</a></li>
+                            <li><a href="#" data-demo-id="startup-product">Product Development Suite</a></li>
+                            <li><a href="#" data-demo-id="startup-efficiency">Operational Efficiency</a></li>
+                        </ul>
+                        <a href="startup.html" class="btn btn-outline">Mehr zu Startup-Lösungen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="fade-up">
+                    <h2>Bereit für Ihre maßgeschneiderte KI-Lösung?</h2>
+                    <p>Kontaktieren Sie uns für eine kostenlose Beratung oder eine personalisierte Demo.</p>
+                    <div class="cta-buttons">
+                        <a href="kontakt.html" class="btn btn-primary btn-lg">Kontakt aufnehmen</a>
+                        <a href="termin.html" class="btn btn-outline btn-lg">Termin vereinbaren</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer einbinden -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header-modern.js"></script>
+    <script>
+        // Include Header and Footer
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                
+                // Nach dem Laden des Headers das active-Skript ausführen
+                setActiveNavLink();
+            });
+            
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+            
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Demo-Filter-Funktionalität
+        document.addEventListener('DOMContentLoaded', function() {
+            const filters = document.querySelectorAll('.demo-filter');
+            const demoCards = document.querySelectorAll('.demo-card');
+            
+            filters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Aktiven Filter aktualisieren
+                    filters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter anwenden
+                    demoCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal-Funktionalität für Demos
+            const modal = document.getElementById('demo-modal');
+            const modalTitle = document.getElementById('demo-modal-title');
+            const demoContainer = document.getElementById('demo-container');
+            const modalClose = document.querySelector('.modal-close');
+            const demoButtons = document.querySelectorAll('.demo-start');
+            const demoLinks = document.querySelectorAll('.industry-demo-list a');
+            
+            // Demo-Start-Buttons
+            demoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const demoId = this.getAttribute('data-demo-id');
+                    openDemoModal(demoId);
+                });
+            });
+            
+            // Branchen-Demo-Links
+            demoLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const demoId = this.getAttribute('data-demo-id');
+                    openDemoModal(demoId);
+                });
+            });
+            
+            // Modal schließen
+            modalClose.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Modal außerhalb schließen
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Demo-Modal öffnen
+            function openDemoModal(demoId) {
+                // Demo-Titel basierend auf ID setzen
+                let title = "Demo";
+                if (demoId === 'chat-assistant') {
+                    title = "Branchenspezifischer KI-Assistent";
+                } else if (demoId === 'document-analysis') {
+                    title = "Intelligente Dokumentenanalyse";
+                } else if (demoId === 'workflow-automation') {
+                    title = "Automatisierte Workflows";
+                } else if (demoId === 'data-analysis') {
+                    title = "Geschäftsdaten-Analyse";
+                } else if (demoId.startsWith('handwerk')) {
+                    title = "Handwerk: " + (demoId === 'handwerk-angebot' ? "Angebotserstellung" : 
+                                          demoId === 'handwerk-termin' ? "Terminplanung" : "Dokumentation");
+                } else if (demoId.startsWith('kmu')) {
+                    title = "KMU: " + (demoId === 'kmu-kundensupport' ? "Kundenservice" : 
+                                     demoId === 'kmu-prozess' ? "Prozessautomatisierung" : "Datenanalyse");
+                } else if (demoId.startsWith('enterprise')) {
+                    title = "Enterprise: " + (demoId === 'enterprise-data' ? "Data Platform" : 
+                                           demoId === 'enterprise-compliance' ? "Compliance" : "Prozessautomatisierung");
+                } else if (demoId.startsWith('startup')) {
+                    title = "Startup: " + (demoId === 'startup-growth' ? "Growth Accelerator" : 
+                                        demoId === 'startup-product' ? "Product Development" : "Operational Efficiency");
+                }
+                
+                modalTitle.textContent = title;
+                
+                // Demo-Inhalt laden (hier würde normalerweise eine echte Demo geladen)
+                demoContainer.innerHTML = `
+                    <div class="demo-placeholder">
+                        <div class="demo-loading">
+                            <div class="spinner"></div>
+                            <p>Demo wird geladen...</p>
+                        </div>
+                        <div class="demo-message">
+                            <h3>Demo-Platzhalter</h3>
+                            <p>An dieser Stelle würde die interaktive Demo "${title}" geladen werden.</p>
+                            <p>In einer Live-Umgebung würde hier eine vollständig interaktive Anwendung erscheinen.</p>
+                            <p>Für eine persönliche Live-Demo kontaktieren Sie uns bitte.</p>
+                            <a href="kontakt.html" class="btn btn-primary">Persönliche Demo anfragen</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Demo-Loading-Animation nach 2 Sekunden ausblenden
+                setTimeout(() => {
+                    const loading = document.querySelector('.demo-loading');
+                    const message = document.querySelector('.demo-message');
+                    if (loading) loading.style.display = 'none';
+                    if (message) message.style.display = 'block';
+                }, 2000);
+                
+                // Modal anzeigen
+                modal.style.display = 'block';
+            }
+            
+            // Video Play-Buttons
+            const videoCards = document.querySelectorAll('.video-card');
+            
+            videoCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const title = this.querySelector('h3').textContent;
+                    
+                    modalTitle.textContent = title;
+                    demoContainer.innerHTML = `
+                        <div class="video-placeholder">
+                            <div class="demo-loading">
+                                <div class="spinner"></div>
+                                <p>Video wird geladen...</p>
+                            </div>
+                            <div class="demo-message">
+                                <h3>Video-Platzhalter</h3>
+                                <p>An dieser Stelle würde das Video "${title}" abgespielt werden.</p>
+                                <p>In einer Live-Umgebung würde hier ein Video erscheinen.</p>
+                                <p>Für eine persönliche Live-Demo kontaktieren Sie uns bitte.</p>
+                                <a href="kontakt.html" class="btn btn-primary">Persönliche Demo anfragen</a>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Video-Loading-Animation nach 2 Sekunden ausblenden
+                    setTimeout(() => {
+                        const loading = document.querySelector('.demo-loading');
+                        const message = document.querySelector('.demo-message');
+                        if (loading) loading.style.display = 'none';
+                        if (message) message.style.display = 'block';
+                    }, 2000);
+                    
+                    modal.style.display = 'block';
+                });
+            });
+        });
+        
+    </script>
+    
+    <!-- Footer einbinden -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Standardisierte Header- und Footer-Einbindung -->
+    <script src="js/standardize-includes.js"></script>
+    
+    <!-- Performance-Optimierungen -->
+    <script src="js/performance.js"></script>
+</body>
+</html>

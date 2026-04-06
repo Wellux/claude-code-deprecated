@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Dashboard - WelluxAI</title>
+    <meta name="description" content="Verwalten Sie Ihre gespeicherten Prompts und persönlichen Einstellungen in Ihrem WelluxAI-Dashboard.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/breadcrumbs.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/contrast-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .dashboard-sidebar {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            position: sticky;
+            top: 100px;
+            max-height: calc(100vh - 200px);
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-sidebar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dashboard-main {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-main:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-info {
+            text-align: center;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .user-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0, 160, 227, 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .user-avatar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 160, 227, 0.4);
+        }
+        
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .user-name {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .user-email {
+            color: #777;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .user-auth-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 8px;
+            color: #666;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        .user-auth-badge.google {
+            background: #e8f0fe;
+            color: #4285F4;
+        }
+        
+        .user-auth-badge.local {
+            background: #e3f2fd;
+            color: #0288d1;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-item {
+            margin-bottom: 5px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background: rgba(0, 160, 227, 0.1);
+            color: var(--blue);
+            transform: translateX(5px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 0;
+            background: var(--blue);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: height 0.3s ease;
+            border-radius: 0 3px 3px 0;
+        }
+        
+        .nav-link.active::after {
+            height: 70%;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--blue);
+            border-radius: 2px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .prompt-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+            position: relative;
+            border: 1px solid transparent;
+        }
+        
+        .prompt-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: rgba(0, 160, 227, 0.2);
+        }
+        
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .prompt-title {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark);
+        }
+        
+        .prompt-category {
+            font-size: 12px;
+            background: var(--blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0, 160, 227, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .prompt-card:hover .prompt-category {
+            box-shadow: 0 4px 8px rgba(0, 160, 227, 0.4);
+        }
+        
+        .prompt-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 14px;
+            max-height: 120px;
+            overflow: hidden;
+            border-left: 3px solid var(--blue);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+        }
+        
+        .prompt-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .prompt-date {
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .prompt-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .prompt-btn {
+            background: none;
+            border: none;
+            color: #777;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .prompt-btn:hover {
+            color: var(--blue);
+            background: rgba(0, 160, 227, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 30px;
+            background: var(--light);
+            border-radius: 12px;
+            border: 2px dashed #ddd;
+            transition: all 0.3s;
+        }
+        
+        .empty-state:hover {
+            border-color: #ccc;
+            background: rgba(0, 160, 227, 0.05);
+        }
+        
+        .empty-state i {
+            font-size: 64px;
+            color: #ccc;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        .empty-state:hover i {
+            color: var(--blue);
+            transform: scale(1.1);
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+        }
+        
+        .empty-state p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+        
+        .profile-form {
+            max-width: 600px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background-color: var(--light);
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 160, 227, 0.2);
+            background-color: var(--white);
+        }
+        
+        .form-group input:disabled {
+            background-color: #f5f5f5;
+            color: #999;
+            cursor: not-allowed;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .logout-btn {
+            margin-top: auto;
+            color: #e74c3c;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+            padding-top: 15px !important;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(231, 76, 60, 0.1) !important;
+            color: #e74c3c !important;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-sidebar {
+                position: relative;
+                top: 0;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header (using client-side include for development) -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current" data-i18n="nav_dashboard">Dashboard</li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <div class="dashboard-sidebar">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">MM</div>
+                        <div class="user-name" id="userName">Demo Benutzer</div>
+                        <div class="user-email" id="userEmail"><i class="fas fa-envelope"></i> demo@example.com</div>
+                        <div class="user-auth-badge local" id="userAuthBadge"><i class="fas fa-lock"></i> <span data-i18n="auth_type_local">Lokales Konto</span></div>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" data-section="prompts">
+                                <i class="fas fa-bookmark"></i>
+                                <span data-i18n="dashboard_saved_prompts">Gespeicherte Prompts</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="profile">
+                                <i class="fas fa-user"></i>
+                                <span data-i18n="dashboard_profile">Profil bearbeiten</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-section="preferences">
+                                <i class="fas fa-cog"></i>
+                                <span data-i18n="dashboard_preferences">Einstellungen</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link logout-btn" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span data-i18n="dashboard_logout">Abmelden</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Main Content -->
+                <div class="dashboard-main">
+                    <!-- Saved Prompts Section -->
+                    <div id="promptsSection" class="dashboard-section">
+                        <h2 class="section-title" data-i18n="dashboard_saved_prompts">Gespeicherte Prompts</h2>
+                        <div class="card-grid" id="promptsGrid">
+                            <!-- Prompts will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Section -->
+                    <div id="profileSection" class="dashboard-section" style="display: none;">
+                        <h2 class="section-title" data-i18n="dashboard_profile">Profil bearbeiten</h2>
+                        <div class="profile-form">
+                            <div class="form-group">
+                                <label for="profileName" data-i18n="form_name">Name</label>
+                                <input type="text" id="profileName" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="profileEmail" data-i18n="form_email">E-Mail</label>
+                                <input type="email" id="profileEmail" name="email" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="profilePassword" data-i18n="form_password_change">Passwort ändern</label>
+                                <input type="password" id="profilePassword" name="password" placeholder="Neues Passwort">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="updateProfile()" data-i18n="btn_save">Speichern</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferences Section -->
+                    <div id="preferencesSection" class="dashboard-section" style="display: none;">
+                        <h2 class="section-title" data-i18n="dashboard_preferences">Einstellungen</h2>
+                        <div class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="prefTheme" data-i18n="form_theme">Theme</label>
+                                    <select id="prefTheme" name="theme">
+                                        <option value="light" data-i18n="theme_light">Hell</option>
+                                        <option value="dark" data-i18n="theme_dark">Dunkel</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prefLanguage" data-i18n="form_language">Sprache</label>
+                                    <select id="prefLanguage" name="language">
+                                        <option value="de" data-i18n="lang_deutsch">Deutsch</option>
+                                        <option value="en" data-i18n="lang_english">English</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="updatePreferences()" data-i18n="btn_save">Speichern</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Include Footer (using client-side include for development) -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JavaScript -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/user-system.js"></script>
+    <script src="js/oauth-manager.js"></script>
+    <script>
+        // Load header and footer using fetch API (for development)
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+            
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+        
+        // Dashboard-Funktionalität
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prüfen, ob Benutzer eingeloggt ist
+            checkLoginStatus();
+            
+            // Navigation-Handling
+            const navLinks = document.querySelectorAll('.nav-link[data-section]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const section = this.getAttribute('data-section');
+                    
+                    // Aktiven Link ändern
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Sektionen ein-/ausblenden
+                    document.querySelectorAll('.dashboard-section').forEach(s => {
+                        s.style.display = 'none';
+                    });
+                    document.getElementById(`${section}Section`).style.display = 'block';
+                });
+            });
+        });
+        
+        // Login-Status prüfen
+        function checkLoginStatus() {
+            if (!WelluxUsers.isLoggedIn()) {
+                // Benutzer ist nicht eingeloggt, zur Login-Seite weiterleiten
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Benutzerdaten laden
+            const user = WelluxUsers.getCurrentUser();
+            loadUserData(user);
+            loadSavedPrompts();
+        }
+        
+        // Benutzerdaten laden
+        function loadUserData(user) {
+            document.getElementById('userName').textContent = user.name;
+            document.getElementById('userEmail').innerHTML = `<i class="fas fa-envelope"></i> ${user.email}`;
+            
+            // Avatar-Initialen oder Profilbild
+            const avatarElement = document.getElementById('userAvatar');
+            
+            if (user.profilePicture) {
+                // Wenn ein Profilbild vorhanden ist (z.B. von OAuth)
+                avatarElement.innerHTML = `<img src="${user.profilePicture}" alt="${user.name}" />`;
+            } else {
+                // Avatar-Initialen aus dem Namen generieren
+                const nameParts = user.name.split(' ');
+                const initials = nameParts.map(part => part.charAt(0)).join('');
+                avatarElement.textContent = initials;
+            }
+            
+            // Auth-Typ-Badge anzeigen
+            const authBadge = document.getElementById('userAuthBadge');
+            authBadge.className = 'user-auth-badge';
+            
+            if (user.authType === 'oauth') {
+                authBadge.classList.add(user.oauthProvider || 'oauth');
+                const providerName = user.oauthProvider === 'google' ? 'Google' : 'Social Login';
+                authBadge.innerHTML = `<i class="fab fa-${user.oauthProvider || 'user-lock'}"></i> <span>${providerName}</span>`;
+                
+                // Profilbearbeitung für OAuth-Benutzer einschränken
+                document.getElementById('profilePassword').disabled = true;
+                document.getElementById('profilePassword').placeholder = WelluxTranslations.translate('password_oauth_disabled') || 'Nicht verfügbar für Social-Login-Konten';
+            } else {
+                authBadge.classList.add('local');
+                authBadge.innerHTML = `<i class="fas fa-lock"></i> <span data-i18n="auth_type_local">Lokales Konto</span>`;
+            }
+            
+            // Profilformular-Daten
+            document.getElementById('profileName').value = user.name;
+            document.getElementById('profileEmail').value = user.email;
+            
+            // Einstellungen
+            if (user.preferences) {
+                document.getElementById('prefTheme').value = user.preferences.theme || 'light';
+                document.getElementById('prefLanguage').value = user.preferences.language || 'de';
+            }
+        }
+        
+        // Gespeicherte Prompts laden
+        function loadSavedPrompts() {
+            const prompts = WelluxUsers.getUserPrompts();
+            const promptsGrid = document.getElementById('promptsGrid');
+            
+            // Alles zurücksetzen
+            promptsGrid.innerHTML = '';
+            
+            // Leerer Zustand, wenn keine Prompts vorhanden sind
+            if (prompts.length === 0) {
+                promptsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="far fa-bookmark"></i>
+                        <h3 data-i18n="no_prompts_title">Keine gespeicherten Prompts</h3>
+                        <p data-i18n="no_prompts_text">Sie haben noch keine Prompts gespeichert. Besuchen Sie unsere Prompt-Bibliothek, um nützliche Prompts zu entdecken.</p>
+                        <a href="prompts.html" class="btn btn-primary" data-i18n="browse_prompts">Prompt-Bibliothek entdecken</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Prompts anzeigen
+            prompts.forEach(prompt => {
+                const date = new Date(prompt.created);
+                const formattedDate = date.toLocaleDateString('de-DE', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                
+                const promptCard = document.createElement('div');
+                promptCard.className = 'prompt-card';
+                promptCard.innerHTML = `
+                    <div class="prompt-header">
+                        <div class="prompt-title">${prompt.title}</div>
+                        <div class="prompt-category">${prompt.category}</div>
+                    </div>
+                    <div class="prompt-content">${prompt.text}</div>
+                    <div class="prompt-actions">
+                        <div class="prompt-date">${formattedDate}</div>
+                        <div class="prompt-buttons">
+                            <button class="prompt-btn" onclick="copyPrompt('${prompt.text}')" title="Kopieren">
+                                <i class="far fa-copy"></i>
+                            </button>
+                            <button class="prompt-btn" onclick="deletePrompt('${prompt.id}')" title="Löschen">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                promptsGrid.appendChild(promptCard);
+            });
+        }
+        
+        // Prompt kopieren
+        function copyPrompt(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showToast('Prompt wurde in die Zwischenablage kopiert', 'success');
+                })
+                .catch(() => {
+                    showToast('Konnte nicht in die Zwischenablage kopieren', 'error');
+                });
+        }
+        
+        // Prompt löschen
+        function deletePrompt(id) {
+            if (confirm('Möchten Sie diesen Prompt wirklich löschen?')) {
+                const result = WelluxUsers.deletePrompt(id);
+                
+                if (result.success) {
+                    loadSavedPrompts();
+                    showToast('Prompt wurde gelöscht', 'success');
+                } else {
+                    showToast(result.message, 'error');
+                }
+            }
+        }
+        
+        // Profil aktualisieren
+        function updateProfile() {
+            const name = document.getElementById('profileName').value;
+            const password = document.getElementById('profilePassword').value;
+            
+            // Name muss ausgefüllt sein
+            if (!name) {
+                showToast('Bitte geben Sie einen Namen ein', 'error');
+                return;
+            }
+            
+            // Aktuellen Benutzer abrufen
+            const user = WelluxUsers.getCurrentUser();
+            
+            // Name aktualisieren
+            WelluxUsers.users[user.id].name = name;
+            WelluxUsers.saveUsers();
+            
+            // Passwort aktualisieren, wenn eines eingegeben wurde
+            if (password) {
+                WelluxUsers.users[user.id].password = WelluxUsers.hashPassword(password);
+                WelluxUsers.saveUsers();
+            }
+            
+            // Aktuellen Benutzer aktualisieren
+            WelluxUsers.currentUser.name = name;
+            WelluxUsers.saveCurrentUser();
+            
+            // UI aktualisieren
+            loadUserData(WelluxUsers.getCurrentUser());
+            
+            showToast('Profil wurde aktualisiert', 'success');
+        }
+        
+        // Einstellungen aktualisieren
+        function updatePreferences() {
+            const theme = document.getElementById('prefTheme').value;
+            const language = document.getElementById('prefLanguage').value;
+            
+            // Einstellungen aktualisieren
+            const result = WelluxUsers.updatePreferences({
+                theme: theme,
+                language: language
+            });
+            
+            if (result.success) {
+                // Theme anwenden
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                
+                // Sprache anwenden
+                if (typeof WelluxTranslations !== 'undefined') {
+                    WelluxTranslations.setLanguage(language);
+                }
+                
+                showToast('Einstellungen wurden aktualisiert', 'success');
+            } else {
+                showToast(result.message, 'error');
+            }
+        }
+        
+        // Abmelden
+        function logout() {
+            WelluxUsers.logout();
+            window.location.href = 'index.html';
+        }
+    </script>
+    
+    <!-- Standardisierte Header- und Footer-Einbindung -->
+    <script src="js/standardize-includes.js"></script>
+</body>
+</html>

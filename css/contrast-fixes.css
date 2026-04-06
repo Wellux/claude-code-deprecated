@@ -1,0 +1,383 @@
+/**
+ * Optimierte Kontrast-Verbesserungen für WelluxAI
+ * 
+ * Diese Datei enthält erweiterte Optimierungen für die Barrierefreiheit,
+ * speziell für die Kontrastprobleme im Light/Dark Mode.
+ * Anpassungen für WCAG AA Konformität (4.5:1 für normalen Text, 3:1 für großen Text)
+ */
+
+/* ========== ALLGEMEINE TEXTVERBESSERUNGEN ========== */
+
+/* Überschriften mit maximalem Kontrast für beide Themes */
+[data-theme="light"] h1, 
+[data-theme="light"] h2, 
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: var(--neutral-950) !important; /* Schwärzerer Text für maximalen Kontrast */
+  text-shadow: none !important; /* Kein Textschatten im Light Mode */
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--neutral-0) !important; /* Reinweiß für maximalen Kontrast */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) !important; /* Verstärkter Textschatten für bessere Lesbarkeit */
+}
+
+/* Paragraphen und allgemeiner Text */
+[data-theme="light"] p,
+[data-theme="light"] span,
+[data-theme="light"] li,
+[data-theme="light"] label,
+[data-theme="light"] .text-content {
+  color: var(--neutral-900) !important; /* Dunklerer Text für besseren Kontrast */
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] li,
+[data-theme="dark"] label,
+[data-theme="dark"] .text-content {
+  color: var(--neutral-50) !important; /* Hellerer Text für besseren Kontrast */
+}
+
+/* ========== BUTTONS UND INTERAKTIVE ELEMENTE ========== */
+
+/* Primäre Buttons */
+[data-theme="light"] .btn-primary {
+  background-color: var(--blue-800) !important; /* Dunkleres Blau für besseren Kontrast */
+  color: white !important;
+  font-weight: 600 !important;
+  border: 2px solid var(--blue-900) !important; /* Deutliche Umrandung */
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--blue-500) !important; /* Mittleres Blau für optimalen Kontrast */
+  color: var(--neutral-950) !important; /* Schwarzer Text für optimalen Kontrast */
+  font-weight: 700 !important;
+  border: 2px solid var(--blue-300) !important; /* Hellere Umrandung für bessere Sichtbarkeit */
+}
+
+/* Sekundäre Buttons */
+[data-theme="light"] .btn-secondary {
+  background-color: var(--neutral-200) !important;
+  color: var(--neutral-950) !important;
+  font-weight: 600 !important;
+  border: 1px solid var(--neutral-400) !important;
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: var(--neutral-700) !important; /* Dunklerer Hintergrund für besseren Kontrast */
+  color: var(--neutral-0) !important; /* Weißer Text für maximalen Kontrast */
+  font-weight: 600 !important;
+  border: 1px solid var(--neutral-500) !important; /* Sichtbarere Border */
+}
+
+/* Outline Buttons */
+[data-theme="light"] .btn-outline {
+  border: 2px solid var(--blue-700) !important;
+  color: var(--blue-900) !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .btn-outline {
+  border: 2px solid var(--blue-400) !important;
+  color: var(--blue-200) !important; /* Helleres Blau für besseren Kontrast */
+  font-weight: 600 !important;
+  background-color: rgba(24, 144, 255, 0.1) !important; /* Leichter Hintergrund für bessere Sichtbarkeit */
+}
+
+/* Button-Hover-States für beide Themes */
+[data-theme="light"] .btn:hover,
+[data-theme="dark"] .btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Button-Focus-States für Tastaturnavigation */
+[data-theme="light"] .btn:focus,
+[data-theme="dark"] .btn:focus {
+  outline: 3px solid var(--blue-300) !important;
+  outline-offset: 2px !important;
+}
+
+/* ========== FORMULARE UND INPUTS ========== */
+
+/* Light Theme Inputs */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background-color: var(--neutral-0) !important;
+  border: 2px solid var(--neutral-400) !important;
+  color: var(--neutral-900) !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: var(--neutral-500) !important; /* Dunklerer Platzhaltertext für bessere Sichtbarkeit */
+}
+
+/* Dark Theme Inputs */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--neutral-800) !important;
+  border: 2px solid var(--neutral-500) !important; /* Hellere Border für bessere Sichtbarkeit */
+  color: var(--neutral-50) !important; /* Hellerer Text für besseren Kontrast */
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--neutral-300) !important; /* Deutlich hellerer Platzhaltertext */
+}
+
+/* Input Focus Styles */
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus,
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  outline: none !important;
+  border-color: var(--blue-500) !important;
+  box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.4) !important; /* Deutlichere Focus-Indication */
+}
+
+/* ========== LINKS UND NAVIGATION ========== */
+
+/* Links im Light Theme */
+[data-theme="light"] a:not(.btn):not(.nav-link) {
+  color: var(--blue-800) !important; /* Dunkleres Blau für besseren Kontrast */
+  font-weight: 600 !important;
+  text-decoration: underline !important; /* Immer unterstrichen für bessere Accessibility */
+}
+
+/* Links im Dark Theme */
+[data-theme="dark"] a:not(.btn):not(.nav-link) {
+  color: var(--blue-300) !important; /* Helleres Blau für besseren Kontrast */
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+}
+
+/* Link Hover States */
+[data-theme="light"] a:not(.btn):hover,
+[data-theme="dark"] a:not(.btn):hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important; /* Dickere Unterstreichung beim Hover */
+}
+
+/* Navigation im Light Theme */
+[data-theme="light"] .nav-link {
+  color: var(--neutral-800) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: var(--blue-800) !important;
+  font-weight: 700 !important;
+}
+
+/* Navigation im Dark Theme */
+[data-theme="dark"] .nav-link {
+  color: var(--neutral-100) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--blue-200) !important;
+  font-weight: 700 !important;
+}
+
+/* ========== KARTEN UND CONTAINER ========== */
+
+/* Cards im Light Theme */
+[data-theme="light"] .card,
+[data-theme="light"] .feature-card {
+  background-color: var(--neutral-0) !important;
+  border: 1px solid var(--neutral-300) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Cards im Dark Theme */
+[data-theme="dark"] .card,
+[data-theme="dark"] .feature-card {
+  background-color: var(--neutral-800) !important;
+  border: 1px solid var(--neutral-600) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Überschriften */
+[data-theme="light"] .card-header h3,
+[data-theme="light"] .feature-card h3 {
+  color: var(--neutral-950) !important;
+}
+
+[data-theme="dark"] .card-header h3,
+[data-theme="dark"] .feature-card h3 {
+  color: var(--neutral-0) !important;
+}
+
+/* ========== TABELLEN ========== */
+
+/* Tabellen im Light Theme */
+[data-theme="light"] table th {
+  background-color: var(--neutral-200) !important;
+  color: var(--neutral-950) !important;
+  border: 1px solid var(--neutral-300) !important;
+}
+
+[data-theme="light"] table td {
+  background-color: var(--neutral-0) !important;
+  color: var(--neutral-900) !important;
+  border: 1px solid var(--neutral-300) !important;
+}
+
+/* Tabellen im Dark Theme */
+[data-theme="dark"] table th {
+  background-color: var(--neutral-700) !important;
+  color: var(--neutral-0) !important;
+  border: 1px solid var(--neutral-600) !important;
+}
+
+[data-theme="dark"] table td {
+  background-color: var(--neutral-800) !important;
+  color: var(--neutral-50) !important;
+  border: 1px solid var(--neutral-600) !important;
+}
+
+/* ========== FOOTER ========== */
+
+/* Footer im Light Theme */
+[data-theme="light"] footer {
+  background-color: var(--neutral-100) !important;
+  border-top: 1px solid var(--neutral-200) !important;
+}
+
+[data-theme="light"] footer p,
+[data-theme="light"] footer span {
+  color: var(--neutral-800) !important;
+}
+
+[data-theme="light"] footer a {
+  color: var(--blue-800) !important;
+}
+
+/* Footer im Dark Theme */
+[data-theme="dark"] footer {
+  background-color: var(--neutral-900) !important;
+  border-top: 1px solid var(--neutral-700) !important;
+}
+
+[data-theme="dark"] footer p,
+[data-theme="dark"] footer span {
+  color: var(--neutral-200) !important;
+}
+
+[data-theme="dark"] footer a {
+  color: var(--blue-300) !important;
+}
+
+/* ========== SPEZIFISCHE KOMPONENTEN ========== */
+
+/* Hero-Section */
+[data-theme="light"] .hero {
+  background-color: var(--neutral-50) !important;
+}
+
+[data-theme="dark"] .hero {
+  background-color: var(--neutral-900) !important;
+}
+
+/* Features-Section */
+[data-theme="light"] .features-section {
+  background-color: var(--neutral-0) !important;
+}
+
+[data-theme="dark"] .features-section {
+  background-color: var(--neutral-850) !important; /* Leicht heller als ganz dunkel */
+}
+
+/* Testimonials */
+[data-theme="light"] .testimonial-card {
+  background-color: var(--neutral-0) !important;
+  border: 1px solid var(--neutral-200) !important;
+}
+
+[data-theme="dark"] .testimonial-card {
+  background-color: var(--neutral-800) !important;
+  border: 1px solid var(--neutral-600) !important;
+}
+
+/* ========== BARRIEREFREIHEIT-VERBESSERUNGEN ========== */
+
+/* Fokusindikatoren für Tastaturnavigation */
+*:focus-visible {
+  outline: 3px solid var(--blue-500) !important;
+  outline-offset: 2px !important;
+}
+
+/* Skip-Link für Tastaturnavigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--blue-600);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Verbesserte Farbkontraste für Icons */
+[data-theme="light"] .icon,
+[data-theme="light"] i.fas,
+[data-theme="light"] i.fab,
+[data-theme="light"] i.far {
+  color: var(--neutral-800) !important;
+}
+
+[data-theme="dark"] .icon,
+[data-theme="dark"] i.fas,
+[data-theme="dark"] i.fab,
+[data-theme="dark"] i.far {
+  color: var(--neutral-100) !important;
+}
+
+/* Verbesserte Lesbarkeit für blaue Akzente im Text */
+[data-theme="light"] .blue {
+  color: var(--blue-800) !important; /* Dunkleres Blau im Light Mode */
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .blue {
+  color: var(--blue-300) !important; /* Helleres Blau im Dark Mode */
+  font-weight: 700 !important;
+}
+
+/* Zusätzliche Kontrast-Verbesserungen für Zustands-Feedback */
+[data-theme="light"] .success-text {
+  color: var(--success) !important;
+}
+
+[data-theme="dark"] .success-text {
+  color: var(--success-light) !important;
+}
+
+[data-theme="light"] .error-text {
+  color: var(--error) !important;
+}
+
+[data-theme="dark"] .error-text {
+  color: var(--error-light) !important;
+}
