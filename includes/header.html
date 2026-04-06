@@ -1,0 +1,204 @@
+<!-- Modern Header -->
+<header id="site-header">
+    <div class="header-wrapper">
+        <div class="container header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="WelluxAI Logo">
+                </a>
+            </div>
+            
+            <!-- Hauptnavigation -->
+            <nav class="main-navigation" aria-label="Hauptnavigation">
+                <ul class="main-menu">
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="loesungen.html" class="dropdown-toggle" data-i18n="nav_solutions">Lösungen <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="handwerk.html">Handwerk</a></li>
+                            <li><a href="kmu.html">KMU</a></li>
+                            <li><a href="enterprise.html">Enterprise</a></li>
+                            <li><a href="startup.html">Startups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="tools.html" class="dropdown-toggle" data-i18n="nav_tools">KI-Tools <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="roi-calculator.html" data-i18n="nav_roi">ROI Kalkulator</a></li>
+                            <li><a href="assessment.html" data-i18n="nav_assessment">KI-Readiness Check</a></li>
+                            <li><a href="prompts.html" data-i18n="nav_prompts">Prompt Library</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="demo.html" data-i18n="nav_demo">KI-Demo</a></li>
+                    <li><a href="erfolgsgeschichten.html" data-i18n="nav_success_stories">Erfolgsgeschichten</a></li>
+                    <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+                    <li><a href="#" id="loginNavLink" data-i18n="nav_account">Konto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Aktionselemente -->
+            <div class="header-actions">
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
+                </button>
+                
+                <div class="contact-button">
+                    <a href="kontakt.html" class="btn btn-primary" data-i18n="nav_contact">Kontakt</a>
+                </div>
+                
+                <div class="language-selector desktop-only">
+                    <div class="current-language" onclick="toggleLanguageDropdown()">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v1H0z' fill='%23000'/%3E%3Cpath d='M0 1h5v1H0z' fill='%23D00'/%3E%3Cpath d='M0 2h5v1H0z' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                        <span data-i18n="lang_deutsch">Deutsch</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="language-dropdown" id="language-dropdown">
+                        <div class="language-option active" onclick="WelluxTranslations.setLanguage('de')">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v1H0z' fill='%23000'/%3E%3Cpath d='M0 1h5v1H0z' fill='%23D00'/%3E%3Cpath d='M0 2h5v1H0z' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                            <span data-i18n="lang_deutsch">Deutsch</span>
+                        </div>
+                        <div class="language-option" onclick="WelluxTranslations.setLanguage('en')">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath d='M-85 0h682v512H-85z'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23a)' transform='translate(80) scale(.94)'%3E%3Cpath fill='%23012169' d='M-256 0H768v512H-256z'/%3E%3Cpath fill='%23fff' d='m-256 0 682 512m-682 0L768 0'/%3E%3Cpath fill='%23fff' d='M170 0v512M-256 256h1024'/%3E%3Cpath fill='%23c8102e' d='M-256 307h1024V205H-256zm307-307v512h102V0z'/%3E%3C/g%3E%3C/svg%3E" alt="English" class="flag-icon">
+                            <span data-i18n="lang_english">English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+<!-- Mobile Sidebar -->
+<div class="mobile-sidebar" id="mobile-sidebar">
+    <!-- Script to handle login/dashboard navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLoginNavLinks();
+        });
+        
+        function updateLoginNavLinks() {
+            // Verzögerung hinzufügen, um sicherzustellen, dass user-system.js geladen ist
+            setTimeout(function() {
+                if (typeof WelluxUsers !== 'undefined') {
+                    const isLoggedIn = WelluxUsers.isLoggedIn();
+                    const loginNavLink = document.getElementById('loginNavLink');
+                    const mobileLoginNavLink = document.getElementById('mobileLoginNavLink');
+                    
+                    if (isLoggedIn) {
+                        if (loginNavLink) {
+                            loginNavLink.textContent = WelluxTranslations.translate('nav_dashboard') || 'Dashboard';
+                            loginNavLink.href = 'dashboard.html';
+                        }
+                        if (mobileLoginNavLink) {
+                            mobileLoginNavLink.textContent = WelluxTranslations.translate('nav_dashboard') || 'Dashboard';
+                            mobileLoginNavLink.setAttribute('onclick', "window.location.href='dashboard.html'; toggleMobileMenu();");
+                        }
+                    } else {
+                        if (loginNavLink) {
+                            loginNavLink.textContent = WelluxTranslations.translate('nav_account') || 'Konto';
+                            loginNavLink.href = 'login.html';
+                        }
+                        if (mobileLoginNavLink) {
+                            mobileLoginNavLink.textContent = WelluxTranslations.translate('nav_account') || 'Konto';
+                            mobileLoginNavLink.setAttribute('onclick', "window.location.href='login.html'; toggleMobileMenu();");
+                        }
+                    }
+                }
+            }, 500); // Kurze Verzögerung, um sicherzustellen, dass alle Skripte geladen sind
+        }
+        
+        function handleLoginNavClick() {
+            if (typeof WelluxUsers !== 'undefined' && WelluxUsers.isLoggedIn()) {
+                window.location.href = 'dashboard.html';
+            } else {
+                window.location.href = 'login.html';
+            }
+            toggleMobileMenu();
+        }
+        
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (submenu) {
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                } else {
+                    // Schließe alle anderen Untermenüs
+                    const allSubmenus = document.querySelectorAll('.mobile-submenu');
+                    allSubmenus.forEach(menu => {
+                        if (menu.id !== submenuId) {
+                            menu.style.display = 'none';
+                        }
+                    });
+                    submenu.style.display = 'block';
+                }
+            }
+        }
+    </script>
+    <button class="mobile-close" onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html" onclick="toggleMobileMenu()" data-i18n="nav_home">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)" onclick="toggleMobileSubmenu('solutions-submenu')" data-i18n="nav_solutions">Lösungen <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu" id="solutions-submenu">
+                    <li><a href="handwerk.html" onclick="toggleMobileMenu()">Handwerk</a></li>
+                    <li><a href="kmu.html" onclick="toggleMobileMenu()">KMU</a></li>
+                    <li><a href="enterprise.html" onclick="toggleMobileMenu()">Enterprise</a></li>
+                    <li><a href="startup.html" onclick="toggleMobileMenu()">Startups</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a href="javascript:void(0)" onclick="toggleMobileSubmenu('tools-submenu')" data-i18n="nav_tools">KI-Tools <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu" id="tools-submenu">
+                    <li><a href="roi-calculator.html" onclick="toggleMobileMenu()" data-i18n="nav_roi">ROI Kalkulator</a></li>
+                    <li><a href="assessment.html" onclick="toggleMobileMenu()" data-i18n="nav_assessment">KI-Readiness Check</a></li>
+                    <li><a href="prompts.html" onclick="toggleMobileMenu()" data-i18n="nav_prompts">Prompt Library</a></li>
+                </ul>
+            </li>
+            <li><a href="demo.html" onclick="toggleMobileMenu()" data-i18n="nav_demo">KI-Demo</a></li>
+            <li><a href="erfolgsgeschichten.html" onclick="toggleMobileMenu()" data-i18n="nav_success_stories">Erfolgsgeschichten</a></li>
+            <li><a href="blog.html" onclick="toggleMobileMenu()" data-i18n="nav_blog">Blog</a></li>
+            <li><a href="#" id="mobileLoginNavLink" onclick="handleLoginNavClick()" data-i18n="nav_account">Konto</a></li>
+            <li><a href="kontakt.html" onclick="toggleMobileMenu()" data-i18n="nav_contact">Kontakt</a></li>
+        </ul>
+    </div>
+    
+    <div class="language-selector">
+        <div class="current-language" onclick="toggleMobileLanguageDropdown()">
+            <span id="mobile-current-lang-display">Deutsch</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="language-dropdown" id="mobile-language-dropdown">
+            <div class="language-option active" onclick="WelluxTranslations.setLanguage('de'); toggleMobileMenu();">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v1H0z' fill='%23000'/%3E%3Cpath d='M0 1h5v1H0z' fill='%23D00'/%3E%3Cpath d='M0 2h5v1H0z' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch" class="flag-icon">
+                <span>Deutsch</span>
+            </div>
+            <div class="language-option" onclick="WelluxTranslations.setLanguage('en'); toggleMobileMenu();">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 480'%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath d='M-85 0h682v512H-85z'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg clip-path='url(%23a)' transform='translate(80) scale(.94)'%3E%3Cpath fill='%23012169' d='M-256 0H768v512H-256z'/%3E%3Cpath fill='%23fff' d='m-256 0 682 512m-682 0L768 0'/%3E%3Cpath fill='%23fff' d='M170 0v512M-256 256h1024'/%3E%3Cpath fill='%23c8102e' d='M-256 307h1024V205H-256zm307-307v512h102V0z'/%3E%3C/g%3E%3C/svg%3E" alt="English" class="flag-icon">
+                <span>English</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="social-links">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:info@wellux.de" aria-label="E-Mail"><i class="far fa-envelope"></i></a>
+    </div>
+</div>

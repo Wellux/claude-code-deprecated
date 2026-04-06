@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - WelluxAI</title>
+    <meta name="description" content="Informieren Sie sich über die neuesten Trends, Fallstudien und praktische Tipps zur KI-Implementierung in Unternehmen. Fachinformationen für KMUs.">
+    <meta name="keywords" content="KI-Blog, KI für KMU, Künstliche Intelligenz Mittelstand, KI-Fallstudien, KI-Implementierung">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/color-scheme.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/breadcrumbs.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/contrast-fixes.css">
+    <link rel="stylesheet" href="css/blog-modern.css">
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Include Header (using client-side include for development) -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="bg-light">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current">Blog</li>
+                </ul>
+            </div>
+            
+            <div class="tools-header">
+                <h2>Unser <span class="accent">Blog</span></h2>
+                <p class="section-intro">Aktuelle Einblicke, Tipps und Fallstudien zur KI-Implementierung für mittelständische Unternehmen</p>
+            </div>
+            
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Alle Beiträge</button>
+                    <button class="filter-btn" data-filter="fallstudie">Fallstudien</button>
+                    <button class="filter-btn" data-filter="tipps">Praxis-Tipps</button>
+                    <button class="filter-btn" data-filter="trends">KI-Trends</button>
+                    <button class="filter-btn" data-filter="news">News</button>
+                </div>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-category="fallstudie">
+                    <img src="images/blog/case-study-manufacturing.jpg" alt="Fallstudie: KI im Fertigungsunternehmen" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">Fallstudie</div>
+                        <h3 class="blog-card__title">Wie ein Fertigungsunternehmen die Produktivität mit KI um 35% steigerte</h3>
+                        <p class="blog-card__excerpt">Ein mittelständischer Metallverarbeiter hat durch die Integration von KI-basierten Vorhersagemodellen Ausfallzeiten reduziert und die Qualitätssicherung verbessert.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>24.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>8 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="tipps">
+                    <img src="images/blog/prompt-engineering.jpg" alt="Prompt Engineering Tipps" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">Praxis-Tipps</div>
+                        <h3 class="blog-card__title">10 Prompt-Engineering Techniken für bessere KI-Ergebnisse</h3>
+                        <p class="blog-card__excerpt">Lernen Sie, wie Sie mit präzisen Prompts genauere und nützlichere Ergebnisse von generativen KI-Modellen erhalten können.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>20.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>12 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-category="trends">
+                    <img src="images/blog/ai-trends-2025.jpg" alt="KI-Trends 2025" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">KI-Trends</div>
+                        <h3 class="blog-card__title">Die 5 wichtigsten KI-Trends für KMUs in 2025</h3>
+                        <p class="blog-card__excerpt">Ein Überblick der relevantesten KI-Entwicklungen und wie mittelständische Unternehmen davon profitieren können.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>15.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>10 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 4 -->
+                <article class="blog-card" data-category="news">
+                    <img src="images/blog/llm-update.jpg" alt="LLM Update News" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">News</div>
+                        <h3 class="blog-card__title">GPT-6: Was das neueste Sprachmodell für Unternehmen bedeutet</h3>
+                        <p class="blog-card__excerpt">Eine detaillierte Analyse der neuen Fähigkeiten von GPT-6 und welche Vorteile diese für Geschäftsprozesse bieten.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>10.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>6 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 5 -->
+                <article class="blog-card" data-category="fallstudie">
+                    <img src="images/blog/retail-ai.jpg" alt="KI im Einzelhandel" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">Fallstudie</div>
+                        <h3 class="blog-card__title">Wie ein Einzelhändler mit KI die Kundenbindung um 42% steigerte</h3>
+                        <p class="blog-card__excerpt">Ein bayerischer Einzelhändler implementierte KI-basierte Produktempfehlungen und personalisierte Marketing-Kampagnen mit beeindruckenden Ergebnissen.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>05.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>9 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 6 -->
+                <article class="blog-card" data-category="tipps">
+                    <img src="images/blog/ai-implementation.jpg" alt="KI-Implementierung Guide" class="blog-card__image">
+                    <div class="blog-card__content">
+                        <div class="blog-card__category">Praxis-Tipps</div>
+                        <h3 class="blog-card__title">KI-Implementierung: 7 Schritte für einen erfolgreichen Start</h3>
+                        <p class="blog-card__excerpt">Ein praxisnaher Leitfaden für die strukturierte Einführung von KI-Lösungen in mittelständischen Unternehmen ohne technische Überforderung.</p>
+                        <div class="blog-card__meta">
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>01.05.2025</span>
+                            </div>
+                            <div class="blog-card__meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>14 Min. Lesezeit</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="pagination-item active">1</a>
+                <a href="#" class="pagination-item">2</a>
+                <a href="#" class="pagination-item">3</a>
+                <span class="pagination-item">...</span>
+                <a href="#" class="pagination-item">5</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="bg-primary text-light">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2>KI-Neuigkeiten <span class="light">direkt in Ihr Postfach</span></h2>
+                    <p>Melden Sie sich für unseren Newsletter an und erhalten Sie regelmäßig praxisnahe KI-Tipps und exklusive Einblicke.</p>
+                </div>
+                <div class="newsletter-form">
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" id="emailNewsletter" placeholder="Ihre E-Mail-Adresse" required>
+                            <button type="submit" class="btn btn-light">Anmelden</button>
+                        </div>
+                        <div class="form-check">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                <span>Ich stimme der <a href="datenschutz.html" class="text-light">Datenschutzerklärung</a> zu</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Include Footer (using client-side include for development) -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Modal für Blog-Post Detailansicht -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Standardisierte Header- und Footer-Einbindung -->
+    <script src="js/standardize-includes.js"></script>
+    
+    <script>
+        // Blog filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter blog posts
+                    blogCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Blog post click handler - open modal with detailed view
+            blogCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    openBlogPost(this);
+                });
+            });
+            
+            // Close modal when clicking on close button or outside modal
+            const modal = document.getElementById('blogModal');
+            const closeBtn = document.querySelector('.close-modal');
+            
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Re-enable scrolling
+                }
+            });
+        });
+        
+        // Function to open blog post in modal
+        function openBlogPost(postElement) {
+            const modal = document.getElementById('blogModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Get post data
+            const title = postElement.querySelector('.blog-card__title').textContent;
+            const category = postElement.querySelector('.blog-card__category').textContent;
+            const date = postElement.querySelector('.blog-card__meta-item:first-child span').textContent;
+            const imageSrc = postElement.querySelector('.blog-card__image').src;
+            const postId = postElement.getAttribute('data-id') || 'post-' + Math.random().toString(36).substr(2, 9);
+            
+            // Generate detailed post content (this would normally come from an API)
+            modalContent.innerHTML = `
+                <article class="blog-post">
+                    <header class="blog-post__header">
+                        <div class="blog-post__category">${category}</div>
+                        <h1 class="blog-post__title">${title}</h1>
+                        <div class="blog-post__meta">
+                            <div class="blog-post__meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>${date}</span>
+                            </div>
+                            <div class="blog-post__meta-item">
+                                <i class="far fa-user"></i>
+                                <span>Marco Mengele</span>
+                            </div>
+                            <div class="blog-post__meta-item">
+                                <i class="far fa-comment"></i>
+                                <span>12 Kommentare</span>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    <img src="${imageSrc}" alt="${title}" class="blog-post__featured-image">
+                    
+                    <div class="blog-post__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl.</p>
+                        
+                        <h2>Wie kann KI Ihrem Unternehmen helfen?</h2>
+                        <p>Künstliche Intelligenz bietet mittelständischen Unternehmen zahlreiche Vorteile:</p>
+                        <ul>
+                            <li>Automatisierung wiederkehrender Aufgaben</li>
+                            <li>Verbesserte Entscheidungsfindung durch Datenanalyse</li>
+                            <li>Personalisierung von Kundenerlebnissen</li>
+                            <li>Optimierung von Geschäftsprozessen</li>
+                            <li>Steigerung der Produktivität und Effizienz</li>
+                        </ul>
+                        
+                        <p>Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl.</p>
+                        
+                        <blockquote>
+                            "Die Integration von KI in unsere Geschäftsprozesse hat nicht nur unsere Effizienz gesteigert, sondern auch völlig neue Möglichkeiten für Innovation und Wachstum eröffnet."
+                            <footer>— Thomas Müller, Geschäftsführer</footer>
+                        </blockquote>
+                        
+                        <h2>Implementierungsschritte</h2>
+                        <p>Die erfolgreiche Integration von KI-Lösungen erfordert einen strukturierten Ansatz:</p>
+                        <ol>
+                            <li>Bedarfsanalyse und Zielsetzung</li>
+                            <li>Auswahl geeigneter KI-Tools und Technologien</li>
+                            <li>Datensammlung und -aufbereitung</li>
+                            <li>Pilotprojekt und Evaluierung</li>
+                            <li>Vollständige Integration und Schulung</li>
+                            <li>Kontinuierliche Optimierung</li>
+                        </ol>
+                        
+                        <p>Abschließend lässt sich sagen, dass KI-Technologien für mittelständische Unternehmen heute zugänglicher sind als je zuvor. Mit dem richtigen Ansatz und einer klaren Strategie können auch kleinere Unternehmen von den Vorteilen der KI profitieren.</p>
+                    </div>
+                    
+                    <div class="share-buttons">
+                        <a href="#" class="share-button"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-button"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-button"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-button"><i class="far fa-envelope"></i></a>
+                    </div>
+                    
+                    <div class="related-posts">
+                        <h3>Ähnliche Artikel</h3>
+                        <div class="related-posts-grid">
+                            <a href="#" class="blog-card">
+                                <img src="images/blog/ai-implementation.jpg" alt="KI-Implementierung" class="blog-card__image">
+                                <div class="blog-card__content">
+                                    <div class="blog-card__category">Praxis-Tipps</div>
+                                    <h4 class="blog-card__title">KI-Implementierung: 7 Schritte für einen erfolgreichen Start</h4>
+                                </div>
+                            </a>
+                            <a href="#" class="blog-card">
+                                <img src="images/blog/retail-ai.jpg" alt="KI im Einzelhandel" class="blog-card__image">
+                                <div class="blog-card__content">
+                                    <div class="blog-card__category">Fallstudie</div>
+                                    <h4 class="blog-card__title">Wie ein Einzelhändler mit KI die Kundenbindung um 42% steigerte</h4>
+                                </div>
+                            </a>
+                            <a href="#" class="blog-card">
+                                <img src="images/blog/llm-update.jpg" alt="LLM Update" class="blog-card__image">
+                                <div class="blog-card__content">
+                                    <div class="blog-card__category">News</div>
+                                    <h4 class="blog-card__title">GPT-6: Was das neueste Sprachmodell für Unternehmen bedeutet</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="comments-section">
+                        <h3>Kommentare (12)</h3>
+                        
+                        <div class="comment-form">
+                            <h4>Hinterlassen Sie einen Kommentar</h4>
+                            <form id="commentForm">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="commentName">Name</label>
+                                        <input type="text" id="commentName" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="commentEmail">E-Mail</label>
+                                        <input type="email" id="commentEmail" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="commentContent">Kommentar</label>
+                                    <textarea id="commentContent" name="content" required></textarea>
+                                </div>
+                                <div class="form-group privacy-consent">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" required>
+                                        <span class="checkmark"></span>
+                                        <span>Ich stimme der <a href="datenschutz.html">Datenschutzerklärung</a> zu und bin damit einverstanden, dass meine Daten zur Bearbeitung meines Kommentars verwendet werden.</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="button button-primary">Kommentar absenden</button>
+                            </form>
+                        </div>
+                        
+                        <div class="comment-list">
+                            <!-- Comment 1 -->
+                            <div class="comment">
+                                <div class="comment__header">
+                                    <span class="comment__author">Sabine Wagner</span>
+                                    <span class="comment__date">24.05.2025</span>
+                                </div>
+                                <div class="comment__content">
+                                    <p>Sehr informativer Artikel! Die Implementierungsschritte sind besonders hilfreich für unser Unternehmen, da wir gerade erst mit KI beginnen.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Comment 2 -->
+                            <div class="comment">
+                                <div class="comment__header">
+                                    <span class="comment__author">Michael Becker</span>
+                                    <span class="comment__date">23.05.2025</span>
+                                </div>
+                                <div class="comment__content">
+                                    <p>Danke für die praxisnahen Tipps. Wir haben bereits erste KI-Tools eingeführt und können die genannten Vorteile definitiv bestätigen.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Comment 3 -->
+                            <div class="comment">
+                                <div class="comment__header">
+                                    <span class="comment__author">Julia Schneider</span>
+                                    <span class="comment__date">22.05.2025</span>
+                                </div>
+                                <div class="comment__content">
+                                    <p>Interessante Perspektive! Ich würde mich über mehr Details zu den Kosten und dem ROI von KI-Implementierungen freuen. Das ist für viele KMUs ein entscheidender Faktor.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            `;
+            
+            // Show the modal
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+        }
+    </script>
+</body>
+</html>

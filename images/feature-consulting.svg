@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00A0E3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0073b6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#grad)"/>
+  
+  <!-- Consulting Icon - Person with Lightbulb -->
+  <circle cx="50" cy="35" r="15" fill="#ffffff" />
+  <path d="M35,70 L65,70 L65,55 C65,47 58,40 50,40 C42,40 35,47 35,55 Z" fill="#ffffff" />
+  
+  <!-- Lightbulb -->
+  <path d="M50,10 L50,25 M40,15 L60,15" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+</svg>
