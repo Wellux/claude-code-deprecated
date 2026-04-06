@@ -1,0 +1,67 @@
+# Logging Configuration
+# Used by src/utils/logger.py
+
+logging:
+  version: 1
+  formatters:
+    json:
+      class: pythonjsonlogger.jsonlogger.JsonFormatter
+      format: "%(timestamp)s %(level)s %(name)s %(message)s"
+    simple:
+      format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+
+  handlers:
+    console:
+      class: logging.StreamHandler
+      formatter: simple
+      level: INFO
+      stream: ext://sys.stdout
+
+    file:
+      class: logging.handlers.RotatingFileHandler
+      formatter: json
+      filename: data/cache/app.log
+      maxBytes: 10485760  # 10MB
+      backupCount: 5
+      level: DEBUG
+
+    error_file:
+      class: logging.handlers.RotatingFileHandler
+      formatter: json
+      filename: data/cache/errors.log
+      maxBytes: 10485760
+      backupCount: 5
+      level: ERROR
+
+  loggers:
+    llm:
+      level: DEBUG
+      handlers: [console, file]
+      propagate: false
+
+    research:
+      level: INFO
+      handlers: [console, file]
+      propagate: false
+
+    security:
+      level: WARNING
+      handlers: [console, file, error_file]
+      propagate: false
+
+  root:
+    level: INFO
+    handlers: [console, file]
+
+# Sensitive fields to redact from logs
+redact_fields:
+  - api_key
+  - password
+  - token
+  - secret
+  - authorization
+
+# Structured log fields always included
+default_fields:
+  service: claude-code-max
+  version: "1.0.0"

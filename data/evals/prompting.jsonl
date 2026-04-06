@@ -1,0 +1,9 @@
+# Prompting quality suite — tests for real LLM runs (needs ANTHROPIC_API_KEY)
+# Run with: ccm eval run prompting.jsonl
+# Skip in CI: these require live API calls
+{"id":"basic-greeting","prompt":"Say hello in exactly three words.","contains":[],"excludes":[],"tags":["prompting","live"],"expected":null,"max_tokens":32,"temperature":0.0,"metadata":{"note":"expect short greeting"}}
+{"id":"count-words","prompt":"How many words are in this sentence: The cat sat on the mat","contains":["6"],"excludes":[],"tags":["prompting","math","live"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}
+{"id":"capital-france","prompt":"What is the capital of France? Answer in one word.","contains":["Paris"],"excludes":["London","Berlin","Madrid"],"tags":["prompting","factual","live"],"expected":"Paris","max_tokens":16,"temperature":0.0,"metadata":{}}
+{"id":"python-add-function","prompt":"Write a Python function called add that takes two numbers and returns their sum. Just the function, no explanation.","contains":["def add","return"],"excludes":[],"tags":["prompting","code","live"],"expected":null,"max_tokens":128,"temperature":0.0,"metadata":{}}
+{"id":"json-output","prompt":"Output a JSON object with keys 'name' and 'age' for a person named Alice who is 30. Output only valid JSON.","contains":["{","Alice","30","}"],"excludes":[],"tags":["prompting","json","live"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}
+{"id":"no-hallucination","prompt":"Who is the current CEO of Anthropic?","contains":["Dario"],"excludes":["OpenAI","Google","Microsoft"],"tags":["prompting","factual","live"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}

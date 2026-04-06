@@ -1,364 +1,615 @@
-# WelluxAI - KI-Lösungen & Digitalisierungsberatung
-
-![Version](https://img.shields.io/badge/Version-2.1.0-blue) ![Status](https://img.shields.io/badge/Status-Beta-orange) ![Last Updated](https://img.shields.io/badge/Last%20Updated-25.05.2025-green)
-
-## 📋 Projekt-Übersicht
-
-WelluxAI bietet moderne KI-Lösungen und Digitalisierungsberatung für Unternehmen aller Größen mit Schwerpunkt auf dem bayerischen Mittelstand. Die Plattform ermöglicht eine nahtlose KI-Integration in bestehende Geschäftsprozesse durch spezialisierte Tools, branchenspezifische Lösungen und umfassende Ressourcen zur Geschäftsprozessoptimierung.
-
-### 🎯 Hauptziele
-
-- Demokratisierung von KI-Technologien für Unternehmen jeder Größe.
-- Beschleunigung der digitalen Transformation durch maßgeschneiderte Lösungen.
-- Optimierung von Geschäftsprozessen durch intelligente Automatisierung.
-- Steigerung der Wettbewerbsfähigkeit durch datengestützte Entscheidungsfindung.
-
-### 🔑 Alleinstellungsmerkmale
-
-- Branchenspezifische KI-Lösungen mit Fokus auf lokale Märkte.
-- Integrierte ROI-Berechnung für KI-Investitionen.
-- Umfassende Prompt-Bibliothek für verschiedene Anwendungsfälle.
-- KI-Readiness Assessment für individualisierte Transformationspläne.
-
-## 🚀 Quick Start
-
-### Voraussetzungen
-
-- Node.js v20.x oder höher
-- npm v10.x oder höher
-- MongoDB v6.0 oder höher (für Backend-Funktionalitäten)
-
-### Installation & Lokaler Start
-
-1. **Repository klonen:**
-
-    ```bash
-    git clone https://github.com/welluxai/website.git
-    cd website
-    ```
-
-2. **Frontend starten:**
-    Stellt die statischen Webseiten-Inhalte bereit.
-
-    ```bash
-    npm install -g live-server
-    live-server --port=5000
-    ```
-
-    Das Frontend ist nun unter `http://localhost:5000` erreichbar.
-
-3. **Backend starten (optional, für dynamische Features):**
-    Wird für Benutzerauthentifizierung, Datenbankinteraktionen und API-Endpunkte benötigt.
-    Öffnen Sie ein neues Terminalfenster:
-
-    ```bash
-    cd server
-    npm install
-    # Umgebungsvariablen konfigurieren (siehe Abschnitt '⚙️ Konfiguration')
-    cp .env.example .env 
-    # .env anpassen
-    npm run dev
-    ```
-
-    Das Backend läuft standardmäßig auf Port `3001`.
-
-### Zugangsdaten für Demo-Bereich
-
-| Rolle     | Benutzername      | Passwort    |
-|-----------|-------------------|-------------|
-| Admin     | [admin@wellux.ai](mailto:admin@wellux.ai)   | WelluxDemo1 |
-| Benutzer  | [demo@wellux.ai](mailto:demo@wellux.ai)    | Demo2025!   |
-
-## ✨ Features
-
-Eine detaillierte Übersicht über implementierte und geplante Features.
-
-### Implementierte Features (Stand 25.05.2025)
-
-| Feature-Bereich                | Feature                                                       | Status | Beschreibung                                                                          | Fertigstellung |
-|--------------------------------|---------------------------------------------------------------|--------|---------------------------------------------------------------------------------------|----------------|
-| **Landing Page**               | Dynamische Haupt-Überschrift                                  | ✅     | Anpassbare Hero-Section-Texte.                                                        | 20.05.2025     |
-|                                | Call-to-Action Buttons                                        | ✅     | Klare Handlungsaufforderungen.                                                        | 01.05.2025     |
-|                                | Service-Übersicht (Teaser)                                    | ✅     | Kurze Vorstellung der Hauptdienstleistungen.                                         | 10.05.2025     |
-|                                | Use Case Teaser                                               | ✅     | Anreißer für Erfolgsgeschichten/Anwendungsbeispiele.                                  | 15.05.2025     |
-|                                | Newsletter-Anmeldung                                          | ✅     | Einfache Anmeldung für Updates.                                                       | 01.05.2025     |
-|                                | Trust Elemente (Placeholder)                                  | 🚧     | Bereich für Kundenlogos/Partnerlogos vorbereitet.                                     | Laufend        |
-| **Allgemeine UI/UX & Navigation**| Responsives Design (Mobile-First)                             | ✅     | Optimale Darstellung auf allen Geräten.                                               | 05.05.2025     |
-|                                | Dark Mode & Light Mode                                        | ✅     | Theme-Auswahl für bessere Lesbarkeit.                                                 | 26.05.2025     |
-|                                | Modernisierte Überschriften-Designs                           | ✅     | Verbessertes visuelles Erscheinungsbild.                                              | 26.05.2025     |
-|                                | Optimierte Navigation mit Dropdown-Menüs                      | ✅     | Verbesserte Menüführung für komplexe Inhalte.                                         | 27.05.2025     |
-|                                | Standardisierte Header/Footer Einbindung                      | ✅     | Konsistentes Erscheinungsbild auf allen Seiten.                                       | 28.05.2025     |
-|                                | Optimiertes Mobile-Menü                                       | ✅     | Verbesserte Benutzerfreundlichkeit auf mobilen Geräten.                               | 22.05.2025     |
-|                                | Design- und Kontrast-Probleme behoben                         | ✅     | Erhöhte Lesbarkeit und Zugänglichkeit gemäß WCAG-Richtlinien.                         | 22.05.2025     |
-|                                | Unterseiten-Design vereinheitlicht und optimiert              | ✅     | Konsistentes Erscheinungsbild über alle Unterseiten hinweg.                           | 22.05.2025     |
-|                                | Blog und KI-Tools Directory für Dark & Light Mode optimiert   | ✅     | Optimale Darstellung der Inhalte in beiden Themes.                                    | 26.05.2025     |
-|                                | Lesbarkeit in beiden Themes verbessert                        | ✅     | Anpassung von Schriftgrößen und Kontrasten für bessere Lesbarkeit.                    | 26.05.2025     |
-|                                | Landingpage verschlankt                                       | ✅     | Reduktion von Inhalten auf der Startseite, Auslagerung auf dedizierte Unterseiten.    | 27.05.2025     |
-| **Kernfunktionalität & Inhalt**| Mehrsprachigkeit (DE/EN)                                      | ✅     | Inhalte in Deutsch und Englisch verfügbar.                                            | 10.05.2025     |
-|                                | Blog-System mit Kategorien & Tags                             | ✅     | Artikel erstellen, verwalten und filtern.                                             | 15.05.2025     |
-|                                | KI-Tools Verzeichnis                                          | ✅     | Übersicht und Detailseiten für KI-Anwendungen.                                        | 18.05.2025     |
-|                                | Kontaktformular & Interaktive Karte                           | ✅     | Standard-Kontaktmöglichkeiten und Anfahrtsplan.                                       | 05.05.2025     |
-| **Benutzer & Sicherheit**      | Benutzerregistrierung & Login (E-Mail/Passwort & OAuth Google)| ✅     | Sichere Kontoerstellung und Anmeldung.                                                | 24.05.2025     |
-|                                | Login-Funktionalität repariert                                | ✅     | Behebung von Fehlern im Anmeldeprozess.                                               | 25.05.2025     |
-|                                | Benutzer-Dashboard                                            | ✅     | Verwaltung persönlicher Daten und gespeicherter Inhalte.                               | 24.05.2025     |
-|                                | JWT-Authentifizierung (Backend)                               | ✅     | Sichere API-Kommunikation.                                                            | 24.05.2025     |
-|                                | Input-Validierung                                             | ✅     | Schutz vor ungültigen Eingaben.                                                       | 15.05.2025     |
-| **Performance**                | Lazy-Loading für Bilder                                       | ✅     | Bilder werden erst bei Bedarf geladen.                                                | 28.05.2025     |
-|                                | Core Web Vitals Optimierungen (LCP, FID, CLS)                 | ✅     | Verbesserte Ladezeiten und Nutzererfahrung.                                           | 28.05.2025     |
-|                                | Integrierte Performance-Messung                               | ✅     | Überwachung der Web Vitals.                                                           | 28.05.2025     |
-
-### Geplante Features & Verbesserungen
-
-| Feature                               | Status | Beschreibung                                                                      | Geplant bis |
-|---------------------------------------|--------|-----------------------------------------------------------------------------------|-------------|
-| KI-Chatbot Integration                | 🚧 30% | Integration eines interaktiven Chatbots für Support und Informationsbeschaffung.    | 01.06.2025  |
-| Erweiterte Filter im KI-Tools Verzeichnis | 📅     | Detailliertere Filteroptionen nach Anwendungsbereich, Preismodell etc.            | 10.06.2025  |
-| Kommentarfunktion für Blogartikel     | ✅     | (Ursprünglich geplant, bereits umgesetzt am 23.05.2025)                           | --          |
-| Personalisierte Content-Empfehlungen  | 📅     | Vorschläge basierend auf Nutzerverhalten und Interessen.                           | 15.07.2025  |
-| Admin-Bereich Erweiterungen           | 🚧 10% | Umfassendere Verwaltungsfunktionen für Inhalte und Benutzer.                      | 30.07.2025  |
-| Barrierefreiheit (WCAG AA)            | 📅     | Weitere Optimierungen zur Erreichung des WCAG AA Standards.                       | 30.06.2025  |
-| Migration zu modernem Framework       | 📅     | Evaluierung und potenzielle Migration (z.B. Next.js) für bessere Performance/DX. | 30.06.2025  |
-
-## 🛠️ Tech Stack
-
-Die WelluxAI Plattform nutzt eine Kombination aus bewährten und modernen Technologien:
-
-- **Frontend**:
-  - HTML5, CSS3, JavaScript (ES6+)
-  - `live-server` für die lokale Entwicklung statischer Seiten
-  - Diverse JavaScript-Bibliotheken für UI-Komponenten und Interaktivität
-- **Backend**:
-  - Node.js (v20.x)
-  - Express.js (als gängiges Node.js Framework)
-  - MongoDB (v6.0+) als Datenbank
-  - JWT (JSON Web Tokens) für Authentifizierung
-- **Entwicklungstools & Umgebung**:
-  - Git & GitHub für Versionskontrolle
-  - npm (v10.x) für Paketmanagement
-  - Visual Studio Code als empfohlene IDE
-- **Deployment (Frontend)**:
-  - Netlify (CI/CD konfiguriert)
-  - Alternative Optionen: Vercel, GitHub Pages
-- **Deployment (Backend)**:
-  - Empfohlene Optionen: Railway, DigitalOcean App Platform, Heroku
-
-## 📁 Projektstruktur
-
-Die Codebasis ist in Frontend- und Backend-Komponenten unterteilt.
-
-### Frontend (`/`)
-
-Der Hauptordner enthält alle clientseitigen Dateien und Assets.
-
-```text
-/ (Root-Verzeichnis der Webseite)
-├── index.html                  # Startseite (Landing Page)
-├── about.html                  # Über Uns Seite
-├── solutions.html              # KI-Lösungen Seite
-├── consulting.html             # Digitalisierungsberatung Seite
-├── blog.html                   # Blog-Übersichtsseite
-├── contact.html                # Kontaktseite
-├── css/                        # CSS-Stylesheets
-│   ├── style.css               # Haupt-Stylesheet
-│   └── responsive.css          # Styles für Responsive Design
-├── js/                         # JavaScript-Dateien
-│   ├── main.js                 # Haupt-Skript für allgemeine Interaktionen
-│   └── auth.js                 # Skripte für Authentifizierung
-├── assets/                     # Bilder, Icons und andere Medien
-│   ├── images/
-│   └── icons/
-├── templates/                  # (Optional) HTML-Templates oder Partials
-│   ├── header.html
-│   └── footer.html
-└── ...                         # Weitere HTML-Seiten und Ressourcen
+```
+ ██████╗ ██╗      █████╗ ██╗   ██╗██████╗ ███████╗
+██╔════╝ ██║     ██╔══██╗██║   ██║██╔══██╗██╔════╝
+██║      ██║     ███████║██║   ██║██║  ██║█████╗
+██║      ██║     ██╔══██║██║   ██║██║  ██║██╔══╝
+╚██████╗ ███████╗██║  ██║╚██████╔╝██████╔╝███████╗
+ ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
+         CODE MAX  —  Build Anything
 ```
 
-### Backend (`/server`)
+> **A gold-standard Claude Code harness: 5-layer architecture · 123 skills · 5-router auto-routing ·
+> FastAPI REST · eval framework · gstack roles · Superpowers methodology · Paperclip orchestration ·
+> tiered memory (hot/warm/glacier) · self-improving via lessons · CI/CD · Docker**
 
-Der `/server`-Ordner beinhaltet die serverseitige Logik, API-Endpunkte und Datenbankintegration.
+---
 
-```text
-/server
-├── node_modules/             # NPM-Pakete
-├── src/                      # Quellcode des Backends
-│   ├── config/               # Konfigurationsdateien (DB, JWT etc.)
-│   │   └── db.config.ts      # Datenbankverbindungseinstellungen
-│   ├── controllers/          # API-Endpunkt-Controller (Logik für Requests)
-│   ├── middleware/           # Express-Middleware (z.B. für Authentifizierung, Logging)
-│   ├── models/               # Datenmodelle (z.B. Mongoose-Schemata für MongoDB)
-│   ├── routes/               # API-Routen-Definitionen
-│   ├── services/             # Geschäftslogik, Interaktion mit Datenbanken
-│   └── types/                # TypeScript-Typdefinitionen (falls verwendet)
-├── .env                      # Umgebungsvariablen (lokal, nicht versioniert)
-├── .env.example              # Beispiel für Umgebungsvariablen
-├── package.json              # Projektdefinition und Abhängigkeiten
-├── tsconfig.json             # TypeScript-Konfiguration (falls verwendet)
-└── server.js                 # Haupteinstiegspunkt der Backend-Anwendung
-```
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-661%20passing-brightgreen.svg)](#testing)
+[![Coverage](https://img.shields.io/badge/coverage-97%25-brightgreen.svg)](#testing)
+[![Ruff](https://img.shields.io/badge/lint-ruff%20clean-blue.svg)](#code-style)
+[![Skills](https://img.shields.io/badge/skills-123-purple.svg)](#skills)
+[![Version](https://img.shields.io/badge/version-1.0.7-orange.svg)](#changelog)
 
-## 📄 Seitenstruktur und Inhalte
+---
 
-Die WelluxAI-Webseite ist darauf ausgelegt, Besuchern einen klaren und informativen Weg zu KI-Lösungen und Digitalisierungsberatung zu bieten.
+## What This Is
 
-### Landing Page (`index.html`)
+Claude Code Max turns Claude Code CLI into a **virtual software factory**. Instead of prompting
+generically, it gives Claude structured roles, methodology, routing intelligence, safety gates,
+and a self-improvement loop — so you ship production-grade software at machine speed.
 
-- **Zweck**: Dient als zentraler Einstiegspunkt und Schaufenster von WelluxAI. Ziel ist es, die Kernkompetenzen prägnant zu kommunizieren und Besucher gezielt zu spezialisierten Informationen und interaktiven Tools wie dem ROI-Kalkulator, dem KI-Assessment, branchenspezifischen Lösungen und dem Blog zu führen.
-- **Kern-Elemente (basierend auf `index.html` vom 25.05.2025)**:
-  - **Hero Section**: Dynamische Hauptüberschrift "KI-Lösungen für kleine und mittelständische Unternehmen", unterstützender Text und primärer Call-to-Action (z.B. "Mehr erfahren" oder "Kostenloses Erstgespräch").
-  - **"Warum WelluxAI?" Sektion**: Präsentation der Alleinstellungsmerkmale und Vorteile einer Zusammenarbeit.
-  - **"Unsere Lösungen" Teaser**: Vorstellung der verschiedenen Lösungsbereiche (KMU, Enterprise, Startup, Handwerk) mit Verlinkung zur Übersichtsseite `loesungen.html`.
-  - **ROI-Kalkulator Teaser**: Interaktives Element oder Verlinkung zum `roi-calculator.html` zur Berechnung potenzieller Einsparungen.
-  - **KI-Assessment Teaser**: Hinweis und Link zum `assessment.html` zur Selbsteinschätzung der KI-Reife.
-  - **Erfolgsgeschichten Teaser**: Anreißer ausgewählter Kundenprojekte mit Link zu `erfolgsgeschichten.html`.
-  - **Aktuelles aus dem Blog Teaser**: Anzeige der neuesten Blogartikel mit Link zu `blog.html`.
-  - **Haupt-Call-to-Action**: Prominenter Button, z.B. "Kostenloses Erstgespräch vereinbaren", der zu `termin.html` oder `kontakt.html` führt.
-  - **Newsletter-Anmeldung**: Formular zur Aufnahme in den E-Mail-Verteiler (oft im Footer integriert).
-  - **Footer**: Enthält Standardinformationen wie Copyright, Links zu Impressum, Datenschutz und Social Media.
-- **Wireframe-Logik**: Die Seite ist so strukturiert, dass sie den Nutzer von einer allgemeinen Einführung in die Thematik ("Warum WelluxAI?") über spezifische Lösungsansätze und interaktive Tools (ROI-Kalkulator, KI-Assessment) bis hin zu konkreten Erfolgsbeispielen und direkten Kontaktmöglichkeiten führt. Jeder Abschnitt dient dazu, Vertrauen aufzubauen und den Mehrwert der WelluxAI-Angebote zu demonstrieren, kulminierend in klaren Handlungsaufforderungen.
+**Inspired by:**
+- [gstack](https://github.com/garrytan/gstack) by Garry Tan — role-based engineering team personas
+- [obra/superpowers](https://github.com/obra/superpowers) — structured methodology enforcement
+- [Paperclip AI](https://paperclip.ing) — multi-agent orchestration with budgets and audit trails
 
-### Weitere wichtige Seiten
+---
 
-- **`assessment.html`**: Interaktives KI-Readiness Assessment zur Einschätzung der KI-Reife von Unternehmen.
-- **`blog.html`**: Blog-Übersichtsseite mit Fachartikeln, Neuigkeiten und Fallstudien rund um KI und Digitalisierung.
-- **`dashboard.html`**: Persönlicher Bereich für registrierte Benutzer zur Verwaltung von Daten und Einstellungen.
-- **`demo.html`**: Seite zur Präsentation von Demo-Versionen oder zur Vereinbarung von Demo-Terminen.
-- **`enterprise.html`**: Spezifische KI-Lösungen und Beratungsangebote für Großunternehmen.
-- **`erfolgsgeschichten.html`**: Sammlung von Case Studies und Erfolgsbeispielen von Kundenprojekten.
-- **`handwerk.html`**: Maßgeschneiderte KI-Lösungen und Digitalisierungsstrategien für Handwerksbetriebe.
-- **`kmu.html`**: KI-Lösungen und Beratungsangebote, zugeschnitten auf die Bedürfnisse kleiner und mittlerer Unternehmen.
-- **`kontakt.html`**: Kontaktformular, Adressdaten und weitere Möglichkeiten zur Kontaktaufnahme.
-- **`loesungen.html`**: Detaillierte Übersicht über das gesamte Lösungsportfolio von WelluxAI.
-- **`login.html`**: Anmeldeseite für Benutzerkonten.
-- **`prompts.html`**: Sammlung oder Informationen zu effektiven Prompts für verschiedene KI-Anwendungen (Prompt Engineering).
-- **`referenzen.html`**: Übersicht über Referenzkunden und Partner.
-- **`roi-calculator.html`**: Interaktiver Rechner zur Abschätzung des Return on Investment von KI-Projekten.
-- **`startup.html`**: KI-Lösungen und Unterstützungsprogramme speziell für Startups.
-- **`termin.html`**: Seite zur einfachen Online-Terminvereinbarung für Beratungsgespräche.
-- **`tools.html`**: Verzeichnis und Beschreibung der von WelluxAI angebotenen oder empfohlenen KI-Tools.
-    *(Hinweis: `about.html`, `consulting.html`, `imprint.html`, `privacy.html` und `resources.html` waren im vorherigen Stand genannt, aber nicht in der aktuellen Dateiliste vom 25.05.2025. Falls diese existieren oder geplant sind, sollten sie ergänzt werden.)*
-
-### Navigationsstruktur (Burger-Menü)
-
-- **Ziel**: Eine klare, intuitive und responsive Navigation, die Nutzern schnellen Zugriff auf alle relevanten Bereiche der WelluxAI-Plattform bietet. Das Burger-Menü passt sich an, je nachdem, ob ein Benutzer angemeldet ist oder nicht.
-
-- **Ansicht für nicht angemeldete Benutzer (Öffentlich):**
-  - Startseite (`index.html`)
-  - Lösungen (`loesungen.html`)
-    - Für KMU (`kmu.html`)
-    - Für Enterprise (`enterprise.html`)
-    - Für Startups (`startup.html`)
-    - Für Handwerk (`handwerk.html`)
-  - Tools & Ressourcen
-    - KI-Tools Verzeichnis (`tools.html`)
-    - ROI-Kalkulator (`roi-calculator.html`)
-    - KI-Assessment (`assessment.html`)
-    - Prompt-Bibliothek (`prompts.html`)
-  - Erfolgsgeschichten (`erfolgsgeschichten.html`)
-  - Blog (`blog.html`)
-  - Kontakt (`kontakt.html`)
-  - Login (`login.html`)
-
-- **Ansicht für angemeldete Benutzer (Authentifiziert):**
-  - Startseite (`index.html`)
-  - Lösungen (`loesungen.html`)
-    - Für KMU (`kmu.html`)
-    - Für Enterprise (`enterprise.html`)
-    - Für Startups (`startup.html`)
-    - Für Handwerk (`handwerk.html`)
-  - Tools & Ressourcen
-    - KI-Tools Verzeichnis (`tools.html`)
-    - ROI-Kalkulator (`roi-calculator.html`)
-    - KI-Assessment (`assessment.html`)
-    - Prompt-Bibliothek (`prompts.html`)
-  - Erfolgsgeschichten (`erfolgsgeschichten.html`)
-  - Blog (`blog.html`)
-  - **Mein Dashboard (`dashboard.html`)**
-  - Kontakt (`kontakt.html`)
-  - **Logout** (Funktion, kein direkter Seitenlink)
-
-> *Hinweis:* Diese Struktur ist ein Vorschlag basierend auf den vorhandenen Seiten und gängigen Praktiken. Die tatsächliche Implementierung kann abweichen und sollte bei Bedarf hier aktualisiert werden.
-
-## ⚙️ Konfiguration
-
-### Umgebungsvariablen (`/server/.env`)
-
-Die Backend-Anwendung wird über Umgebungsvariablen konfiguriert. Eine `.env.example`-Datei im `/server`-Verzeichnis dient als Vorlage. Kopieren Sie diese zu `.env` und passen Sie die Werte an Ihre lokale Umgebung an.
-
-Wichtige Variablen:
-
-- `NODE_ENV`: Umgebung (z.B. `development`, `production`)
-- `PORT`: Server-Port für das Backend (default: `3001`)
-- `MONGO_URI`: Verbindungsstring für die MongoDB-Datenbank.
-- `JWT_SECRET`: Geheimer Schlüssel für die Generierung und Verifizierung von JSON Web Tokens.
-- `CORS_ORIGIN`: Erlaubte Ursprünge für Cross-Origin Resource Sharing (wichtig für die Kommunikation zwischen Frontend und Backend).
-- `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`: Für die Google OAuth 2.0 Authentifizierung.
-
-## 🚀 Deployment
-
-Dieser Abschnitt beschreibt die Schritte und Optionen für das Deployment des Frontends und Backends.
-
-### Frontend Deployment
-
-Das Frontend besteht aus statischen Dateien und kann auf verschiedenen Plattformen gehostet werden.
+## Quick Start
 
 ```bash
-# Build-Prozess (falls vorhanden, z.B. für Optimierungen oder bei Einsatz eines Frameworks)
-# npm run build 
+# Clone and enter
+git clone <repo> && cd wellux_testprojects
+
+# Install Python deps
+pip install -e ".[dev]"
+
+# Set API key
+export ANTHROPIC_API_KEY="sk-ant-..."
+
+# Launch Claude Code
+claude
+
+# In session:
+f    # → execute next MASTER_PLAN step
+s    # → status (git + tasks + health)
+r    # → Karpathy research on latest AI
+a    # → full security + perf audit
 ```
 
-**Empfohlene Hosting-Optionen:**
+---
 
-- **Netlify**: (Bereits konfiguriert)
-  - Automatisches Deployment bei Push zu `main`.
-  - Netlify Forms für Kontaktformular integriert.
-  - Netlify Functions für serverless API-Endpunkte (falls benötigt).
-- **Vercel**: Alternative für schnelles Frontend-Hosting, unterstützt Edge-Funktionen.
-- **GitHub Pages**: Kostenloses Hosting für statische Inhalte direkt aus dem Repository.
+## 5-Layer Architecture
 
-### Backend Deployment
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         DEVELOPER                               │
+└────────────────────────────┬────────────────────────────────────┘
+                             │  claude / "f" / /skill-name
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  L1 ── CLAUDE.md                      Persistent context        │
+│        Loaded every session. Routing ref, CLI, API, principles. │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  L2 ── .claude/skills/  (123 skills)  Auto-invoked on keyword   │
+│        Security · Dev · AI/ML · DevOps · Docs · PM · Ecosystem  │
+│        + gstack roles · Superpowers · v0.9 skills               │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  L3 ── .claude/hooks/  (7 hooks)      Deterministic safety      │
+│   session-start · pre-compact · user-prompt · pre-bash          │
+│   post-edit · post-pr · stop                                    │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  L4 ── .claude/agents/  (4 agents)    Autonomous subagents      │
+│        ralph-loop · research · swarm · security-reviewer        │
+└────────────────────────────┬────────────────────────────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  L5 ── .claude/rules/  (3 rule files) Modular instructions      │
+│        code-style · testing · api-conventions                   │
+└─────────────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│  src/routing/             5-Router Auto-Selection               │
+│  ┌──────────┐ ┌─────────┐ ┌──────────┐ ┌──────────┐ ┌──────┐  │
+│  │LLM router│ │ Skill   │ │  Agent   │ │  Memory  │ │ Task │  │
+│  │opus/     │ │ router  │ │  router  │ │  router  │ │router│  │
+│  │sonnet/   │ │ 70+ kw  │ │ 4 agents │ │ 5 tiers  │ │3 cmx │  │
+│  │haiku     │ │triggers │ │          │ │          │ │      │  │
+│  └──────────┘ └─────────┘ └──────────┘ └──────────┘ └──────┘  │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-Das Node.js-Backend muss auf einer Plattform gehostet werden, die serverseitige Anwendungen unterstützt.
+---
+
+## Ecosystem Integration
+
+### gstack — Engineering Team Personas (Garry Tan)
+
+Run skills as specific engineering roles. Each persona has distinct priorities and constraints:
+
+| Skill | Persona | Trigger |
+|-------|---------|---------|
+| `/office-hours` | CEO + CTO + PM + Designer debate | "review approach", "office hours", "should we build this" |
+| `/ship` | Release Engineer | "ship it", "deploy", "cut release", "land this" |
+| `/careful` | Risk-averse Senior Eng | "be careful", "risky change", "low risk mode" |
+| `/plan-eng-review` | Staff Engineer review | "eng review", "technical review before starting" |
+
+### Superpowers — Structured Methodology (Jesse Vincent / obra)
+
+Enforce rigorous software engineering discipline before a single line of code:
+
+| Skill | Phase | What It Does |
+|-------|-------|--------------|
+| `/brainstorm` | Requirements | Socratic refinement — surfaces assumptions, edge cases, tradeoffs |
+| `/write-plan` | Planning | Breaks work into 2-5 min atomic chunks with explicit acceptance criteria |
+| `/superpowers` | Execution | High-agency mode — senior engineer discipline, tests + docs in one pass |
+
+**Workflow:**
+```bash
+/brainstorm build a rate limiter for the API
+# → 10 clarifying questions answered
+/write-plan implement the rate limiter per the brainstorm
+# → atomic subtasks with specs
+/superpowers execute the plan
+# → implementation + tests + docs, reviewed before presenting
+```
+
+### Paperclip — Multi-Agent Orchestration
+
+Structure complex projects as an agent org chart with budgets and audit trails:
+
+| Skill | Purpose |
+|-------|---------|
+| `/paperclip` | Assign tasks to named agents with spend budgets, heartbeat, audit log |
+| `/swarm` | Parallel decomposition into independent agent workstreams |
+| `/agent-orchestrator` | Design multi-agent coordination patterns |
+
+---
+
+## Routing System
+
+Auto-selects the right model, skill, agent, memory tier, and task plan for any task:
+
+```python
+from src.routing import route
+
+d = route("implement a JWT auth middleware with tests")
+print(d.summary())
+# ┌─────────────────────────────────────────────────┐
+# │ LLM     : sonnet  (complexity 6/10)             │
+# │ Skill   : /test-writer  (confidence 0.82)       │
+# │ Agent   : ralph-loop                            │
+# │ Memory  : FILES                                 │
+# │ Plan    : COMPLEX → 4 subtasks                  │
+# └─────────────────────────────────────────────────┘
+```
+
+```
+ccm route "your task"         # show routing decision
+ccm route "your task" --json  # machine-readable output
+```
+
+**Thresholds:** opus (7-10) · sonnet (4-6, default) · haiku (0-3)
+
+---
+
+## Skills (123 total)
+
+Run any skill with `/skill-name` or let keyword matching auto-invoke it.
+
+### Ecosystem (8)
+| Skill | Purpose |
+|-------|---------|
+| `/superpowers` | High-agency senior engineer mode |
+| `/brainstorm` | Socratic requirements refinement (Superpowers) |
+| `/write-plan` | Atomic task decomposition with acceptance criteria |
+| `/office-hours` | Strategic review: CEO/CTO/PM/Designer personas |
+| `/ship` | Full release: test → lint → security → build → deploy → monitor |
+| `/careful` | Low-risk mode: extra confirmation, no destructive ops |
+| `/paperclip` | Multi-agent orchestration with budgets and audit trails |
+| `/gsd` | Get Shit Done — focused shipping mode, no interruptions |
+| `/mem` | Persist decisions and facts across sessions via MCP |
+| `/obsidian` | Second brain knowledge management |
+| `/swarm` | Parallel agent workstream decomposition |
+| `/create` | Generate new skills from scratch |
+
+### v0.9 New Skills (9)
+| Skill | Purpose |
+|-------|---------|
+| `/preflight` | 12-category task clarity scorecard before expensive execution |
+| `/tdd` | TDD via subagent isolation: TestWriter → Implementer → Refactorer |
+| `/self-reflect` | Mine commits + sessions for patterns → auto-update lessons.md |
+| `/chain-of-draft` | Skeleton → expand → critique → final (CoD, ~20% of CoT tokens) |
+| `/foresight` | Cross-domain strategic analysis + one contextual nudge |
+| `/team` | Preset multi-agent teams: code-review, security, debug, architect, ship, research |
+| `/context-diff` | Structured change summary between git refs or sessions |
+| `/riper` | 5-phase gate: Research→Innovate→Plan→Execute→Review with explicit approvals |
+| `/memory-bank` | Warm-tier memory sync: status, query, domain management |
+
+### Security (16)
+| Skill | Role |
+|-------|------|
+| `/ciso` | Orchestrator — runs full color team sweep |
+| `/pen-tester` | Red team: offensive, adversary emulation |
+| `/soc-analyst` | Blue team: monitoring, threat detection, triage |
+| `/appsec-engineer` | OWASP Top 10, secure SDLC, code review |
+| `/ai-security` | Prompt injection, LLM/agent attack surfaces |
+| `/iam-engineer` | SSO, MFA, RBAC, access reviews |
+| `/grc-analyst` | Governance, risk, compliance, audit |
+| `/incident-response` | Containment, forensics, recovery playbook |
+| `/security-engineer` | SIEM rules, WAF, detection engineering |
+| `/purple-team` | Red-to-blue bridge, validates detections |
+| `/cloud-engineer` | Cloud infra security + hardening |
+| `/dba` | Database security, encryption, access control |
+| `/network-engineer` | Firewall rules, VPN, zero-trust |
+| `/secrets-mgr` | Secrets management, rotation, vault |
+| `/sysadmin` | OS hardening, patch management, backup |
+| `/help-desk` | Support gatekeeper, access provisioning |
+
+### Development (20)
+`/code-review` `/refactor` `/debug` `/architect` `/test-writer` `/api-designer`
+`/db-optimizer` `/perf-profiler` `/tech-debt` `/pr-reviewer` `/dep-auditor`
+`/migration` `/feature-planner` `/bug-hunter` `/type-safety` `/async-optimizer`
+`/cache-strategy` `/error-handler` `/changelog` `/concurrency`
+
+### AI / ML Research (15)
+`/karpathy-researcher` `/paper-summarizer` `/prompt-engineer` `/rag-builder`
+`/agent-orchestrator` `/evals-designer` `/model-benchmarker` `/fine-tuner`
+`/embeddings` `/dataset-curator` `/ml-debugger` `/llm-optimizer`
+`/vision-analyst` `/multimodal` `/ai-safety`
+
+### DevOps / Infrastructure (15)
+`/ci-cd` `/docker` `/k8s` `/terraform` `/monitoring` `/logging` `/backup`
+`/cost-optimizer` `/scaling` `/pipeline-opt` `/deploy-checker` `/rollback`
+`/infra-docs` `/sre` `/devops-engineer`
+
+### Documentation (10)
+`/readme-writer` `/adr-writer` `/runbook-creator` `/api-docs`
+`/changelog-maintainer` `/onboarding` `/arch-diagrammer`
+`/decision-logger` `/tutorial-writer` `/knowledge-base`
+
+### Optimization / Research (15)
+`/web-vitals` `/seo-auditor` `/a11y-checker` `/bundle-analyzer` `/query-optimizer`
+`/memory-profiler` `/algorithm` `/data-pipeline` `/cron-scheduler` `/web-scraper`
+`/trend-researcher` `/competitive-analyst` `/kpi-tracker` `/metrics-designer`
+`/perf-profiler`
+
+### Project Management (9)
+`/sprint-planner` `/standup` `/retrospective` `/roadmap` `/risk-assessor`
+`/scope-definer` `/estimation` `/blocker-resolver` `/stakeholder`
+
+---
+
+## CLI — `ccm`
 
 ```bash
-# Build für Produktion (falls TypeScript oder Build-Schritte nötig)
-# cd server
-# npm run build
-
-# Starten in Produktionsumgebung (typischerweise über einen Prozessmanager wie PM2)
-# npm start 
+pip install -e ".[dev]"   # one-time setup
+ccm --help
 ```
 
-**Empfohlene Hosting-Optionen:**
+```
+ccm route "task"                       # full routing decision  (--json)
+ccm complete "prompt"                  # one-shot completion (auto-routes model)
+ccm complete "prompt" --model opus     # override model
+ccm serve [--host 0.0.0.0 --port 8000] # start FastAPI
+ccm status                             # git branch + test count + skills
+ccm research "topic"                   # create data/research/<date>-<slug>.md stub
+ccm eval list                          # list bundled eval suites
+ccm eval inspect <suite.jsonl>         # show cases + constraints
+ccm eval run <suite.jsonl>             # run suite  (--dry-run --tag --threshold --json)
+ccm context-diff [--since <ref>]       # structured change summary since git ref or yesterday
+ccm memory-bank status                 # show hot lines + warm domains + glacier count
+ccm memory-bank query <term>           # cross-tier search (warm domains + glacier)
+ccm memory-bank sync                   # update hot-memory timestamp
+```
 
-- **Railway**: PaaS mit einfacher CI/CD-Integration und automatischem Scaling.
-- **DigitalOcean App Platform**: Managed Hosting mit Auto-Deploys und integriertem Monitoring.
-- **Heroku**: Beliebte PaaS-Lösung mit einfacher Skalierung und Management.
+---
 
-Stellen Sie sicher, dass alle notwendigen Umgebungsvariablen auf der Hosting-Plattform konfiguriert sind.
+## REST API
 
-## 📊 Projekt-Status (Stand: 25.05.2025)
+```bash
+ccm serve           # → http://localhost:8000
+docker compose up   # → same, containerized
+```
 
-- **Fortschritt**: ca. 90% (Kernfunktionalitäten implementiert, UI/UX-Verbesserungen weitgehend abgeschlossen)
-- **Nächster Meilenstein**: "Phase 5: Erweiterte Features" - insbesondere "KI-Chat Integration" (Deadline: 01.06.2025)
-- **Aktuelle Blocker**: Keine kritischen Blocker. Fokus liegt auf der Fertigstellung der verbleibenden Features aus Phase 5 und der Vorbereitung für Phase 6 (Testing & Launch).
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Status + available models |
+| `/v1/complete` | POST | Single-turn completion (auto-routes model) |
+| `/v1/complete/stream` | POST | SSE streaming: `data: <token>\n\n` … `data: [DONE]\n\n` |
+| `/v1/chat` | POST | Multi-turn conversation with history |
+| `/v1/route` | POST | Routing decision only — no LLM call |
 
-## 🔄 Letzte Änderungen
+Every response includes `X-Request-ID` (correlation) and `X-Process-Time-Ms` (latency).
 
-- 2025-05-25: `sitemap.xml` aktualisiert, um die aktuelle Seitenstruktur gemäß README.md widerzuspiegeln.
-- 2025-05-25: Diverse Linting-Fehler in `README.md` behoben (MD036, MD012, MD032).
-*(Für Details siehe Git Commit History)*
+```python
+import httpx
 
-## 🤝 Contributing
+r = httpx.post("http://localhost:8000/v1/complete", json={
+    "prompt": "Explain RAG in 3 sentences",
+    "auto_route": True
+})
+print(r.json()["content"])     # answer
+print(r.json()["model"])       # routed model
+print(r.json()["cost_usd"])    # cost
+```
 
-Derzeit sind keine externen Beiträge vorgesehen. Bei Interesse an einer Mitarbeit kontaktieren Sie bitte WelluxAI direkt.
+---
 
-## 👤 Autor
+## Eval Framework
 
-### Marco Mengele
+```python
+from src.evals import EvalCase, EvalSuite, EvalRunner, AsyncEvalRunner
 
-- Geschäftsführer Wellux
-- Meister SHK & Energieberater
+suite = (EvalSuite("smoke")
+    .add(EvalCase("greet", "Say hello",     contains=["hello"]))
+    .add(EvalCase("math",  "What is 2+2?",  contains=["4"]))
+    .add(EvalCase("code",  "Write FizzBuzz in Python", contains=["fizz"]))
+)
 
-## 📄 Lizenz
+# Sync
+report = EvalRunner(my_llm).run(suite)
 
-Alle Rechte vorbehalten - Wellux 2025
+# Async (concurrent)
+report = await AsyncEvalRunner(my_async_llm, concurrency=5).run(suite)
+
+print(report.summary())
+# pass_rate=1.00 mean_score=1.00 mean_latency_ms=312.4
+```
+
+**Bundled suites** in `data/evals/`:
+
+| Suite | Cases | Notes |
+|-------|-------|-------|
+| `smoke.jsonl` | 5 | Echo-safe, passes without API key (`--dry-run`) |
+| `routing.jsonl` | 5 | Model-routing expectation cases |
+| `prompting.jsonl` | 6 | Live quality cases (`tag=live`, needs `ANTHROPIC_API_KEY`) |
+
+```bash
+ccm eval run data/evals/smoke.jsonl --dry-run        # CI-safe
+ccm eval run data/evals/prompting.jsonl --tag live    # live API
+```
+
+---
+
+## Python Stack
+
+```
+src/
+├── llm/               LLM clients — ClaudeClient, abstract LLMClient
+├── routing/           5-router system (llm, skill, agent, memory, task)
+├── api/               FastAPI app — /v1/complete, /v1/chat, /v1/route, /health
+├── evals/             EvalCase, EvalSuite, EvalRunner, AsyncEvalRunner
+├── persistence/       FileStore, MemoryStore, TieredMemory, LogIndex
+├── prompt_engineering/ Templates, few-shot builders, chain composers
+├── utils/             RateLimiter, ResponseCache, TokenCounter
+└── handlers/          Error classification + retry logic
+```
+
+```python
+# LLM client
+from src.llm import ClaudeClient, build_request
+
+client = ClaudeClient()
+resp = await client.complete(build_request("Explain RAG in 3 sentences"))
+print(resp.content)      # text
+print(resp.tokens_used)  # token count
+print(resp.cost_usd)     # cost in USD
+
+# Routing
+from src.routing import route
+d = route("implement JWT middleware with tests")
+print(d.summary())
+
+# Persistence
+from src.persistence import FileStore
+fs = FileStore()
+fs.write_research("LightRAG", content)      # → data/research/YYYY-MM-DD-lightrag.md
+fs.append_lesson("Never mock internals", …) # → tasks/lessons.md
+fs.log_event("deploy", env="prod")          # → data/cache/events.log
+```
+
+---
+
+## Tiered Memory
+
+Three-tier memory system for context survival across sessions and compactions:
+
+| Tier | Location | Size | Purpose |
+|------|----------|------|---------|
+| **Hot** | `.claude/memory/hot/hot-memory.md` | ≤50 lines | Always-loaded session context; auto-updated by PreCompact hook |
+| **Warm** | `.claude/memory/warm/<domain>.md` | Unlimited | Domain knowledge: architecture · decisions · patterns · troubleshooting · api-surface |
+| **Glacier** | `.claude/memory/glacier/YYYY-MM-DD-<slug>.md` | Unlimited | Immutable YAML-frontmatter ADRs with full-text search |
+
+```python
+from src.persistence import TieredMemory
+
+tm = TieredMemory()
+tm.write_hot("active_feature", "JWT auth middleware")       # hot: always loaded
+tm.write_warm("architecture", "# Architecture\n...")        # warm: domain file
+tm.archive_glacier("jwt-decision", content,                 # glacier: permanent ADR
+                   tags=["auth", "security"], title="JWT over session cookies")
+
+results = tm.search_glacier("PostgreSQL")                   # full-text + tag search
+```
+
+```bash
+ccm memory-bank status          # show all tiers
+ccm memory-bank query "routing" # search warm + glacier
+```
+
+---
+
+## Hooks
+
+| Hook | Trigger | Behavior |
+|------|---------|----------|
+| `session-start.sh` | Every session start | Colored banner · git stats · last commits · open tasks · lessons · health |
+| `pre-compact.sh` | Before context compaction | Snapshot git state + open tasks → hot-memory.md · daily session log |
+| `user-prompt-submit.sh` | Every user message | Branch safety warning · long-prompt detection |
+| `pre-tool-bash.sh` | Before every Bash | Log command · block dangerous patterns (exit 2) |
+| `post-tool-edit.sh` | After every Edit/Write | Auto-lint Python · validate JSON · check SKILL.md frontmatter |
+| `post-tool-pr.sh` | After `gh pr create` | List changed files · suggest `/simplify` |
+| `stop.sh` | Session end | Validators (uncommitted/open tasks/lint) · session log → `data/sessions/` |
+
+**Exit codes:** `0` = allow  ·  `2` = block the tool call
+
+---
+
+## Agents
+
+| Agent | Invocation | Purpose |
+|-------|-----------|---------|
+| `ralph-loop` | `run autonomously` / `loop until done` | Self-driving dev: read todo → plan → implement → verify → loop |
+| `research-agent` | `research X` / `deep dive` | Karpathy method: search → distill → implement → store |
+| `swarm-orchestrator` | `swarm this` / `parallel agents` | Decompose complex task into parallel independent workstreams |
+| `security-reviewer` | `security review` / `full audit` | 16-domain sweep → `data/outputs/security-report-*.md` |
+
+---
+
+## Self-Improvement Loop
+
+```
+Mistake → User corrects → tasks/lessons.md updated
+    ↓
+session-start.sh shows last lessons every boot
+    ↓
+self-improve.sh (Monday 8am) distills → tasks + commits
+    ↓
+lessons.md becomes a personalized, growing ruleset
+```
+
+Over time the system gets smarter about your specific project, team, and preferences.
+
+---
+
+## Optimizer Crons
+
+```bash
+# Daily 7am: GitHub trending → research stubs
+0 7 * * *   cd /home/user/wellux_testprojects && bash tools/scripts/github-trending-research.sh
+
+# Daily 6am: doc freshness + skill frontmatter check
+0 6 * * *   cd /home/user/wellux_testprojects && bash tools/scripts/optimize-docs.sh
+
+# Monday 6am: Karpathy research loop (8 AI topics)
+0 6 * * 1   cd /home/user/wellux_testprojects && bash tools/scripts/research-agent.sh
+
+# Sunday midnight: security scan (secrets + permissions)
+0 0 * * 0   cd /home/user/wellux_testprojects && bash tools/scripts/security-scan.sh
+
+# Sunday 1am: perf audit (import times + code metrics)
+0 1 * * 0   cd /home/user/wellux_testprojects && bash tools/scripts/perf-audit.sh
+
+# Monday 8am: self-improvement loop (lessons → tasks)
+0 8 * * 1   cd /home/user/wellux_testprojects && bash tools/scripts/self-improve.sh
+```
+
+Install: `crontab -e` and paste the above.
+
+---
+
+## CI / CD
+
+**GitHub Actions** (`.github/workflows/ci.yml`) runs on every push:
+
+| Job | What it does |
+|-----|-------------|
+| `test` | ruff lint + pytest (Python 3.11 & 3.12) + coverage upload |
+| `smoke-evals` | `ccm eval run smoke.jsonl --dry-run` — no API key needed |
+| `lint-dockerfile` | hadolint on Dockerfile |
+
+**Docker:**
+```bash
+docker compose up        # → FastAPI on :8000 with /health check
+docker compose up -d     # detached
+```
+
+---
+
+## MCP Servers
+
+Configured in `.mcp.json`:
+
+| Server | Purpose |
+|--------|---------|
+| `github` | Issues, PRs, code search |
+| `filesystem` | Structured file operations |
+| `brave-search` | Web search for research |
+| `sentry` | Error monitoring + alerts |
+| `memory` | Cross-session entity memory |
+| `sequential-thinking` | Structured multi-step reasoning |
+
+---
+
+## Project Structure
+
+```
+.claude/
+├── settings.json           Max-autonomy permissions + hooks config
+├── hooks/                  7 hook scripts (session-start, pre-compact, user-prompt, pre-bash, post-edit, post-pr, stop)
+├── memory/                 hot/ · warm/ · glacier/ tiered memory
+├── skills/                 123 SKILL.md files
+├── agents/                 4 agent definitions
+├── commands/               5 slash commands (deploy, audit, research, review, fix-issue)
+└── rules/                  3 rule files (code-style, testing, api-conventions)
+
+src/
+├── llm/                    LLM clients + abstract interface
+├── routing/                5-router system
+├── api/                    FastAPI REST layer
+├── evals/                  Eval framework
+├── persistence/            FileStore, MemoryStore, LogIndex
+├── prompt_engineering/     Templates, few-shot, chaining
+├── utils/                  RateLimiter, ResponseCache, TokenCounter
+└── handlers/               Error classification
+
+config/                     YAML configs (models, prompts, logging)
+data/
+├── evals/                  Bundled eval suites (smoke, routing, prompting)
+├── research/               Karpathy-style research stubs (auto-generated)
+├── cache/                  Event logs, cron output
+└── outputs/                Security reports, audit outputs
+
+tasks/
+├── todo.md                 Checkable task list
+└── lessons.md              Self-improvement log
+
+docs/                       Architecture, ADRs, runbooks
+tools/scripts/              Cron scripts
+examples/                   basic_completion.py, chat_session.py, chain_prompts.py
+MASTER_PLAN.md              31-step bootstrap plan (loopable)
+```
+
+---
+
+## Setup
+
+```bash
+# 1. Clone
+git clone <repo> wellux_testprojects && cd wellux_testprojects
+
+# 2. Python environment
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+
+# 3. API key
+export ANTHROPIC_API_KEY="sk-ant-..."
+# or add to ~/.bashrc / ~/.zshrc
+
+# 4. Run tests (no API key needed)
+pytest tests/ -q
+ccm eval run data/evals/smoke.jsonl --dry-run
+
+# 5. Start API server
+ccm serve --reload
+
+# 6. Install crons (optional)
+crontab -e   # paste from Optimizer Crons section
+
+# 7. Launch Claude Code
+claude
+```
+
+---
+
+## Core Principles
+
+| Principle | Rule |
+|-----------|------|
+| **Route first** | Let the routing system pick model/skill/agent — don't override without reason |
+| **Verify before done** | Run tests + `ccm eval run smoke.jsonl --dry-run` before marking complete |
+| **Lint gate** | `ruff check src/ tests/ --select E,F,W --ignore E501` must be clean |
+| **Self-improve** | After any correction → add lesson to `tasks/lessons.md` |
+| **Minimal impact** | Touch only what the task requires |
+| **Brainstorm first** | For non-trivial tasks: `/brainstorm` → `/write-plan` → `/superpowers execute` |
+| **Ship with confidence** | `/ship` enforces: tests → lint → security → build → health check |
