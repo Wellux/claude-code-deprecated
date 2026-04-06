@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp"
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/user/wellux_testprojects"
+      ],
+      "env": {}
+    },
+    "brave": {
+      "type": "http",
+      "url": "https://mcp.brave.com/mcp"
+    },
+    "sentry": {
+      "type": "http",
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {}
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {}
+    },
+    "ccm": {
+      "type": "stdio",
+      "command": "python3",
+      "args": [
+        "-m",
+        "src.mcp_server"
+      ],
+      "cwd": "/home/user/wellux_testprojects",
+      "env": {}
+    }
+  }
+}

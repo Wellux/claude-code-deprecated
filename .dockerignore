@@ -1,0 +1,51 @@
+# Build context exclusions — keeps image lean and prevents secrets leaking
+
+# Git metadata
+.git/
+.gitignore
+
+# Claude Code harness (runtime only, not needed in container)
+.claude/
+.mcp.json
+.pre-commit-config.yaml
+
+# Secrets and local config
+.env
+.env.*
+*.local
+secrets/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.egg-info/
+dist/
+build/
+
+# Dev tooling
+notebooks/
+tools/
+docs/
+examples/
+tests/
+data/
+
+# Docker files (not needed inside the image)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# OS noise
+.DS_Store
+*.swp
+*~
+
+# Large optional deps (ML stack) not in the runtime image
+requirements.txt

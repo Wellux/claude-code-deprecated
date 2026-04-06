@@ -1,0 +1,8 @@
+# Routing eval suite — tests that the router picks the right model/agent
+# Run with: ccm eval run routing.jsonl --dry-run
+# (Dry-run echoes the prompt; tests verify routing metadata, not LLM output)
+{"id":"simple-summary-haiku","prompt":"Summarise this text in one sentence: The quick brown fox jumps over the lazy dog.","contains":["quick","fox"],"excludes":[],"tags":["routing","haiku"],"expected":null,"max_tokens":128,"temperature":0.0,"metadata":{"expected_model":"haiku"}}
+{"id":"code-review-sonnet","prompt":"Review this Python function for bugs and suggest improvements: def add(a, b): return a+b","contains":["add","function"],"excludes":[],"tags":["routing","sonnet","code"],"expected":null,"max_tokens":256,"temperature":0.0,"metadata":{"expected_model":"sonnet"}}
+{"id":"security-audit-opus","prompt":"Perform a comprehensive security audit of this multi-tier cloud architecture with authentication, authorization, encryption, and threat modelling","contains":["security","architecture"],"excludes":[],"tags":["routing","opus","security"],"expected":null,"max_tokens":512,"temperature":0.0,"metadata":{"expected_model":"opus"}}
+{"id":"format-text-haiku","prompt":"Format this CSV as a markdown table: name,age\nAlice,30\nBob,25","contains":["name","age"],"excludes":[],"tags":["routing","haiku","format"],"expected":null,"max_tokens":128,"temperature":0.0,"metadata":{"expected_model":"haiku"}}
+{"id":"debug-complex-sonnet","prompt":"Debug this failing async Python test that uses pytest-asyncio, mock.patch, and checks database consistency after a race condition","contains":["debug","async","test"],"excludes":[],"tags":["routing","sonnet","debug"],"expected":null,"max_tokens":512,"temperature":0.0,"metadata":{"expected_model":"sonnet"}}

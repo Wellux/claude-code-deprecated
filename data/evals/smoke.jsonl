@@ -1,0 +1,6 @@
+{"id":"echo-hello","prompt":"hello world","contains":["hello"],"excludes":[],"tags":["smoke","fast"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{"suite":"smoke","description":"fast sanity checks, echo-LLM pattern"}}
+{"id":"echo-python","prompt":"Python is a programming language","contains":["Python","language"],"excludes":[],"tags":["smoke","fast"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}
+{"id":"echo-no-profanity","prompt":"This is a clean response","contains":["clean"],"excludes":["damn","hell","crap"],"tags":["smoke","safety"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}
+{"id":"echo-json-safe","prompt":"{\"key\": \"value\"}","contains":["{"],"excludes":[],"tags":["smoke","format"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{}}
+{"id":"echo-multiline","prompt":"line one\nline two\nline three","contains":["line"],"excludes":[],"tags":["smoke","fast"],"expected":null,"max_tokens":128,"temperature":0.0,"metadata":{}}
+{"id":"echo-excludes-verified","prompt":"The answer is correct and complete","contains":["correct"],"excludes":["wrong","broken","error"],"tags":["smoke","excludes"],"expected":null,"max_tokens":64,"temperature":0.0,"metadata":{"note":"verifies excludes scorer is exercised — prompt does not contain excluded words"}}

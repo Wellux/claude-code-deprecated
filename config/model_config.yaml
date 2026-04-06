@@ -1,0 +1,61 @@
+# Model Configuration
+# Update model IDs as new versions are released
+
+models:
+  # Best quality — use for: complex reasoning, architecture, security, research
+  opus:
+    provider: anthropic
+    model: claude-opus-4-6
+    max_tokens: 16384
+    temperature: 0.3
+    use_for: [research, architecture, security_audit, complex_reasoning]
+
+  # Best balance — default for most tasks
+  sonnet:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    max_tokens: 8192
+    temperature: 0.7
+    use_for: [code_review, implementation, writing, analysis]
+
+  # Fastest + cheapest — use for: classification, simple transforms, batch
+  haiku:
+    provider: anthropic
+    model: claude-haiku-4-5-20251001
+    max_tokens: 4096
+    temperature: 0.5
+    use_for: [classification, simple_transforms, batch_processing, routing]
+
+# Default model for tasks not explicitly configured
+default: sonnet
+
+# Rate limits (per minute)
+rate_limits:
+  opus: 50
+  sonnet: 100
+  haiku: 500
+
+# Cost per million tokens (approximate, check Anthropic pricing)
+cost_per_mtok:
+  opus:
+    input: 15.0
+    output: 75.0
+  sonnet:
+    input: 3.0
+    output: 15.0
+  haiku:
+    input: 0.25
+    output: 1.25
+
+# Model routing rules
+routing:
+  # Use haiku for tasks where cost matters and quality threshold is low
+  use_haiku_when:
+    - task_type: classification
+    - task_type: simple_summarization
+    - batch_size_gt: 100
+  # Use opus for tasks requiring highest quality
+  use_opus_when:
+    - task_type: security_audit
+    - task_type: architecture_review
+    - task_type: research_synthesis

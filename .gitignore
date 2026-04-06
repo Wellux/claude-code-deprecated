@@ -1,0 +1,78 @@
+# Local Claude Code settings (never commit personal overrides)
+.claude/settings.local.json
+
+# Environment variables and secrets (.env.example IS committed as a template)
+.env
+.env.local
+.env.*.local
+*.local
+secrets/
+credentials/
+
+# Data directories (generated, not source)
+data/cache/
+data/outputs/
+data/embeddings/
+# data/research/ is tracked — stubs committed, populated content is ephemeral
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.tox/
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb.bak
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Docker (committed — not ignored)
+# .dockerignore is intentionally tracked
+
+# Compiled / binary
+*.so
+*.dylib
+*.dll
+
+# Node (if any JS tooling)
+node_modules/
+npm-debug.log*
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup

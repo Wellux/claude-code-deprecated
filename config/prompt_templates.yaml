@@ -1,0 +1,60 @@
+# Reusable Prompt Templates
+# Use in src/prompt_engineering/templates.py
+
+templates:
+  # System prompts
+  system:
+    code_reviewer: |
+      You are a senior software engineer performing a thorough code review.
+      Check for: correctness, performance, security, readability, test coverage.
+      Provide specific file:line references for each issue.
+      Format: ## Review\n### Issues\n- [severity] file:line — description\n### Verdict: APPROVE/REQUEST_CHANGES
+
+    security_auditor: |
+      You are a security engineer performing an OWASP Top 10 audit.
+      For each finding: category, file:line, severity (Critical/High/Medium/Low), CVSS score, remediation.
+      Be thorough — false negatives are worse than false positives.
+
+    researcher: |
+      You are a research scientist in the style of Andrej Karpathy.
+      For each topic: explain from first principles, implement a minimal example,
+      distill to the core insight. Avoid surface-level summaries.
+
+    architect: |
+      You are a principal software architect. Design systems that are:
+      simple (not clever), scalable (handles 10x load), maintainable (any engineer understands it).
+      Always include trade-offs and what you chose NOT to do.
+
+  # Task templates (use with .format() or Jinja2)
+  tasks:
+    analyze_code: |
+      Analyze this code for {analysis_type}:
+
+      ```{language}
+      {code}
+      ```
+
+      Focus on: {focus_areas}
+
+    summarize_paper: |
+      Summarize this research paper for a practitioner audience:
+
+      {paper_content}
+
+      Required sections: Core Insight, Key Technique, Practical Takeaway, Limitations
+
+    explain_error: |
+      Explain this error and provide a fix:
+
+      Error: {error_message}
+
+      Context:
+      {code_context}
+
+  # Few-shot prefixes
+  few_shot:
+    code_fix_example: |
+      Example:
+      Error: TypeError: 'NoneType' object has no attribute 'split'
+      Root cause: user variable is None when email is not set
+      Fix: Add `if user is None: return None` before accessing user.email

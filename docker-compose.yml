@@ -1,0 +1,55 @@
+services:
+  api:
+    build:
+      context: .
+      target: app
+    image: ccm-api:latest
+    ports:
+      - "${PORT:-8000}:8000"
+    env_file:
+      - path: .env
+        required: false      # allow running without .env (vars can come from environment:)
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - CCM_LOG_PATH=data/cache/events.log
+    volumes:
+      - ccm-data:/app/data   # named volume — persists events.log across restarts
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 512M
+        reservations:
+          memory: 128M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  # Optional: local MCP memory server
+  memory:
+    image: node:20-slim
+    working_dir: /app
+    command: >
+      sh -c "npx -y @modelcontextprotocol/server-memory"
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    profiles: ["mcp"]
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+volumes:
+  ccm-data:
+    driver: local

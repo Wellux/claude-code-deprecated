@@ -1,0 +1,110 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(pip *)",
+      "Bash(pip3 *)",
+      "Bash(npm *)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(ls -la *)",
+      "Bash(mkdir *)",
+      "Bash(mkdir -p *)",
+      "Bash(chmod *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(wc *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(date *)",
+      "Bash(tail *)",
+      "Bash(head *)",
+      "Bash(bash tools/scripts/*)",
+      "Bash(bash .claude/hooks/*)",
+      "Bash(docker *)",
+      "Bash(docker compose *)",
+      "Bash(docker-compose *)",
+      "Bash(ccm build*)",
+      "Bash(ccm deploy*)",
+      "Bash(ccm ps*)",
+      "Bash(ccm health*)",
+      "Bash(ccm serve-mcp*)",
+      "Bash(python3 -m src.mcp_server*)",
+      "mcp__github__*"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | bash)",
+      "Bash(sudo rm *)",
+      "Bash(sudo dd *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "bash /home/user/wellux_testprojects/.claude/hooks/session-start.sh 2>/dev/null || true"
+      }
+    ],
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "bash /home/user/wellux_testprojects/.claude/hooks/pre-compact.sh 2>/dev/null || true"
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+        "command": "bash /home/user/wellux_testprojects/.claude/hooks/user-prompt-submit.sh 2>/dev/null || true",
+        "timeout": 3
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/wellux_testprojects/.claude/hooks/pre-tool-bash.sh 2>/dev/null || true",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/wellux_testprojects/.claude/hooks/post-tool-edit.sh 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/wellux_testprojects/.claude/hooks/post-tool-edit.sh 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "bash /home/user/wellux_testprojects/.claude/hooks/stop.sh 2>/dev/null || true"
+      }
+    ]
+  }
+}
